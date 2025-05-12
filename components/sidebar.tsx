@@ -1,9 +1,7 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect } from "react"
-import Link from "next/link"
 import { ChevronDown, ChevronRight, Hammer, Wrench, Ruler, Paintbrush, Lightbulb, Shield } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -18,7 +16,11 @@ interface Category {
   subcategories?: { name: string; slug: string }[]
 }
 
-export default function Sidebar() {
+interface SidebarProps {
+  onSelectSubcategory?: (slug: string) => void // Hacemos que sea opcional
+}
+
+export default function Sidebar({ onSelectSubcategory = () => { } }: SidebarProps) {
   const [openCategories, setOpenCategories] = useState<string[]>([])
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null)
 
@@ -169,8 +171,17 @@ export default function Sidebar() {
                           transition={{ duration: 0.2, delay: subIndex * 0.05 }}
                           whileHover={{ x: 5 }}
                         >
-                          <Button variant="ghost" asChild className="w-full justify-start pl-6 font-normal">
-                            <Link href={`/categoria/${category.slug}/${subcategory.slug}`}>{subcategory.name}</Link>
+                          <Button
+                            variant="ghost"
+                            className="w-full justify-start pl-6 font-normal"
+
+                            onClick={
+                              () => {
+                                console.log("Subcategoría seleccionada:", subcategory.slug)
+                                onSelectSubcategory(subcategory.slug)
+                              }}
+                          >
+                            {subcategory.name}
                           </Button>
                         </motion.div>
                       ))}

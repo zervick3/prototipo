@@ -6,12 +6,17 @@ import { Menu, Search, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import Sidebar from "./sidebar"
+
 import { motion } from "framer-motion"
 
 export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
-
+  const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null)
+  console.log("Subcategoría seleccionada en Header:", selectedSubcategory)
+  const handleSelectSubcategory = (slug: string) => {
+    console.log("Callback recibido en Header:", slug); // Depuración
+    setSelectedSubcategory(slug);
+  };
   return (
     <header className="sticky top-0 z-40 border-b bg-background">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
@@ -23,9 +28,7 @@ export default function Header() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-[240px] sm:w-[300px]">
-              <Sidebar />
-            </SheetContent>
+
           </Sheet>
           <Link href="/" className="flex items-center gap-2">
             <motion.div
@@ -82,6 +85,7 @@ export default function Header() {
           </div>
         </div>
       )}
+
     </header>
   )
 }
