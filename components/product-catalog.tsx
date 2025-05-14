@@ -1,18 +1,20 @@
 "use client"
 
 import { useState } from "react"
-import { Grid, List } from "lucide-react"
+import { Menu, Grid, List } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import ProductGrid from "./product-grid"
 import ProductList from "./product-list"
-import Sidebar from "./sidebar" // Importamos el Sidebar
-import { products } from "@/lib/data" // Asegúrate de que tus productos estén correctamente definidos en este archivo.
+import Sidebar from "./sidebar"
+import { products } from "@/lib/data"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export default function ProductCatalog() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const [sortBy, setSortBy] = useState("featured")
-  const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null) // Usamos null en lugar de cadena vacía
+  const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null)
+  const [isSheetOpen, setIsSheetOpen] = useState(false)
 
   // Función para ordenar productos
   const getSortedProducts = () => {
@@ -42,11 +44,27 @@ export default function ProductCatalog() {
   const subcategories = Array.from(new Set(products.map((product) => product.subcategory)))
 
   return (
-    <div className="flex">
-      {/* Sidebar para seleccionar subcategorías */}
-      <Sidebar onSelectSubcategory={(slug) => setSelectedSubcategory(slug)} />
+    <div className=" flex-1 space-y-6 px-2 py-6 w-full">
+      {/* Sidebar para pantallas grandes */}
+      <div className="hidden md:block w-[240px] sm:w-[300px]">
+        <Sidebar onSelectSubcategory={(slug) => setSelectedSubcategory(slug)} />
+      </div>
 
-      <div className="flex-1 space-y-6">
+      {/* Sidebar para pantallas móviles */}
+      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+        <SheetTrigger asChild>
+          <Button variant="outline" size="icon" className="md:hidden p-3">
+            <Menu className="h-5 w-5" />
+            <span className="sr-only">Toggle menu</span>
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="left" className="w-[80vw] sm:w-[300px]">
+          <Sidebar onSelectSubcategory={(slug) => { setSelectedSubcategory(slug); setIsSheetOpen(false); }} />
+        </SheetContent>
+      </Sheet>
+
+      {/* Contenido principal */}
+      <div className="flex-1 space-y-6 px-2 py-6 mx-auto max-w-screen-lg">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <h1 className="text-2xl font-bold tracking-tight md:text-3xl">Catálogo de Productos</h1>
 
@@ -63,13 +81,12 @@ export default function ProductCatalog() {
               </SelectContent>
             </Select>
 
-            {/* Select para elegir subcategoría */}
             <Select value={selectedSubcategory ?? undefined} onValueChange={setSelectedSubcategory}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Filtrar por subcategoría" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">Todas</SelectItem> {/* Usamos "all" en lugar de null */}
+                <SelectItem value="all">Todas</SelectItem>
                 {subcategories.map((subcategory) => (
                   <SelectItem key={subcategory} value={subcategory}>
                     {subcategory}

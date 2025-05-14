@@ -16,7 +16,7 @@ interface ProductGridProps {
 
 export default function ProductGrid({ products }: ProductGridProps) {
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center">
       {products.map((product, index) => (
         <motion.div
           key={product.id}
@@ -24,9 +24,9 @@ export default function ProductGrid({ products }: ProductGridProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: index * 0.05 }}
           whileHover={{ y: -5 }}
-          className="card-3d-effect"
+          className="card-3d-effect w-full max-w-xs mx-auto"
         >
-          <Card className="h-full overflow-hidden border-2 border-transparent transition-all duration-300 hover:border-primary/20 hover:shadow-lg">
+          <Card className="w-full h-full overflow-hidden border-2 border-transparent transition-all duration-300 hover:border-primary/20 hover:shadow-lg">
             <div className="relative aspect-square overflow-hidden">
               <Image
                 src={product.image || "/placeholder.svg"}
@@ -75,9 +75,8 @@ export default function ProductGrid({ products }: ProductGridProps) {
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={i}
-                    className={`h-4 w-4 ${
-                      i < product.rating ? "fill-yellow-400 text-yellow-400" : "text-muted-foreground"
-                    }`}
+                    className={`h-4 w-4 ${i < product.rating ? "fill-yellow-400 text-yellow-400" : "text-muted-foreground"
+                      }`}
                   />
                 ))}
                 <span className="ml-1 text-xs text-muted-foreground">({product.reviews})</span>
