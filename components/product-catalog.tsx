@@ -44,7 +44,7 @@ export default function ProductCatalog() {
   const subcategories = Array.from(new Set(products.map((product) => product.subcategory)))
 
   return (
-    <div className=" flex-1 space-y-6 px-2 py-6 w-full">
+    <div className=" flex space-y-6 px-2 py-6 w-full">
       {/* Sidebar para pantallas grandes */}
       <div className="hidden md:block w-[240px] sm:w-[300px]">
         <Sidebar onSelectSubcategory={(slug) => setSelectedSubcategory(slug)} />

@@ -7,14 +7,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { motion, AnimatePresence } from "framer-motion"
-
-interface Category {
-  name: string
-  slug: string
-  icon: React.ReactNode
-  color: string
-  subcategories?: { name: string; slug: string }[]
-}
+import { categories } from "@/lib/datacategoria"
 
 interface SidebarProps {
   onSelectSubcategory?: (slug: string) => void // Hacemos que sea opcional
@@ -24,76 +17,7 @@ export default function Sidebar({ onSelectSubcategory = () => { } }: SidebarProp
   const [openCategories, setOpenCategories] = useState<string[]>([])
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null)
 
-  const categories: Category[] = [
-    {
-      name: "Herramientas Manuales",
-      slug: "herramientas-manuales",
-      icon: <Hammer className="h-5 w-5" />,
-      color: "category-gradient-1",
-      subcategories: [
-        { name: "Martillos", slug: "martillos" },
-        { name: "Destornilladores", slug: "destornilladores" },
-        { name: "Llaves", slug: "llaves" },
-        { name: "Alicates", slug: "alicates" },
-      ],
-    },
-    {
-      name: "Herramientas Eléctricas",
-      slug: "herramientas-electricas",
-      icon: <Wrench className="h-5 w-5" />,
-      color: "category-gradient-2",
-      subcategories: [
-        { name: "Taladros", slug: "taladros" },
-        { name: "Sierras", slug: "sierras" },
-        { name: "Lijadoras", slug: "lijadoras" },
-        { name: "Amoladoras", slug: "amoladoras" },
-      ],
-    },
-    {
-      name: "Medición y Nivelación",
-      slug: "medicion-nivelacion",
-      icon: <Ruler className="h-5 w-5" />,
-      color: "category-gradient-3",
-      subcategories: [
-        { name: "Cintas métricas", slug: "cintas-metricas" },
-        { name: "Niveles", slug: "niveles" },
-        { name: "Escuadras", slug: "escuadras" },
-      ],
-    },
-    {
-      name: "Pinturas y Acabados",
-      slug: "pinturas-acabados",
-      icon: <Paintbrush className="h-5 w-5" />,
-      color: "category-gradient-4",
-      subcategories: [
-        { name: "Pinturas", slug: "pinturas" },
-        { name: "Brochas y Rodillos", slug: "brochas-rodillos" },
-        { name: "Barnices", slug: "barnices" },
-      ],
-    },
-    {
-      name: "Iluminación",
-      slug: "iluminacion",
-      icon: <Lightbulb className="h-5 w-5" />,
-      color: "category-gradient-5",
-      subcategories: [
-        { name: "Lámparas", slug: "lamparas" },
-        { name: "Focos LED", slug: "focos-led" },
-        { name: "Linternas", slug: "linternas" },
-      ],
-    },
-    {
-      name: "Seguridad",
-      slug: "seguridad",
-      icon: <Shield className="h-5 w-5" />,
-      color: "category-gradient-6",
-      subcategories: [
-        { name: "Cascos", slug: "cascos" },
-        { name: "Guantes", slug: "guantes" },
-        { name: "Gafas protectoras", slug: "gafas-protectoras" },
-      ],
-    },
-  ]
+
 
   // Abrir la primera categoría por defecto
   useEffect(() => {

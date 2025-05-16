@@ -13,8 +13,24 @@ export interface Product {
   isNew: boolean
   inStock: boolean
   date: string
+  fichaTecnica: string
+  tags: string[]
+  stockDisponible: number
+  ubicacionAlmacen: string
   technicalSpecs: {
     [key: string]: string
   }
   features: string[]
+}
+export interface Subcategory {
+  name: string;
+  slug: string;
+}
+
+export interface Category {
+  name: string;
+  slug: string;
+  icon: React.ReactNode;
+  color: string;
+  subcategories?: { name: string; slug: string }[]
 }
