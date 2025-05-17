@@ -8,7 +8,7 @@ import ProductGrid from "./product-grid"
 import ProductList from "./product-list"
 import Sidebar from "./sidebar"
 import { products } from "@/lib/data"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 
 export default function ProductCatalog() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
@@ -59,6 +59,7 @@ export default function ProductCatalog() {
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="w-[80vw] sm:w-[300px]">
+          <SheetTitle className="sr-only">Menú de categorías</SheetTitle>
           <Sidebar onSelectSubcategory={(slug) => { setSelectedSubcategory(slug); setIsSheetOpen(false); }} />
         </SheetContent>
       </Sheet>

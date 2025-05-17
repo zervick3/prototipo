@@ -10,7 +10,9 @@ export const categories: Category[] = [
         color: "category-gradient-6",
         subcategories: [
             { name: "Placas", slug: "placas" },
-            { name: "Perfiles", slug: "perfiles" },
+            { name: "Parante", slug: "Parante" },
+            { name: "Omega", slug: "omega" },
+            { name: "Esquinero", slug: "esquinero" },
             { name: "Superboard", slug: "superboard" },
             { name: "Masillas", slug: "masillas" },
             { name: "Cintas", slug: "cintas" },

@@ -19,7 +19,7 @@ export default function ProductList({ products }: ProductListProps) {
     <div className="space-y-6">
       {products.map((product, index) => (
         <motion.div
-          key={product.id}
+          key={`${product.code}-${index}`} {...product}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3, delay: index * 0.05 }}
@@ -71,9 +71,8 @@ export default function ProductList({ products }: ProductListProps) {
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star
                         key={i}
-                        className={`h-4 w-4 ${
-                          i < product.rating ? "fill-yellow-400 text-yellow-400" : "text-muted-foreground"
-                        }`}
+                        className={`h-4 w-4 ${i < product.rating ? "fill-yellow-400 text-yellow-400" : "text-muted-foreground"
+                          }`}
                       />
                     ))}
                     <span className="ml-1 text-xs text-muted-foreground">({product.reviews})</span>
