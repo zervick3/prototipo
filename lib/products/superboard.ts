@@ -26,5 +26,9 @@ export const superboardProducts: Product[] = [
             "Fácil de cortar y soldar",
             "Ideal para exteriores",
         ],
+        fichaTecnica: "",
+        tags: [],
+        stockDisponible: 0,
+        ubicacionAlmacen: ""
     },
 ];

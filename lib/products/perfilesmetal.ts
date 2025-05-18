@@ -168,7 +168,7 @@ export const perfilesProducts: Product[] = [
     },
     {
         id: "6",
-        code: "Cod: ETEX4049833",
+        code: "ETEX4049833",
         name: "ESQUINERO PLASTICO VINIL RÍGIDO 30 X 30 X 3.00M",
         description: "Esquinero de PVC para sistemas Drywall",
         price: 0,
@@ -201,7 +201,7 @@ export const perfilesProducts: Product[] = [
     },
     {
         id: "7",
-        code: "Cod: ETEX4049832",
+        code: "ETEX4049832",
         name: "ESQUINERO PLASTICO VINIL CURVO 30 X 30 X 3.00M",
         description: "Esquinero de PVC para sistemas Drywall",
         price: 0,
@@ -234,7 +234,7 @@ export const perfilesProducts: Product[] = [
     },
     {
         id: "8",
-        code: "Cod: 402987",
+        code: "402987",
         name: "RIEL DE 39 X 25 X 0.45 X 3.00M GAL / CONSTRUTEK",
         description: "Perfil Drywall galvanizado para construcción en seco. Son utilizados para proteccion de golpes en esquinas de muros, ventanas, puertas, y bordes en general.",
         price: 0,
@@ -243,7 +243,7 @@ export const perfilesProducts: Product[] = [
         reviews: 8,
         image: "/perfiles/riel39.jpg",
         category: "Drywall",
-        subcategory: "Parante",
+        subcategory: "riel",
         isNew: false,
         inStock: true,
         stockDisponible: 85,
@@ -257,59 +257,61 @@ export const perfilesProducts: Product[] = [
             Espesor: "0.45mm",
             Largo: "3.00m",
             Material: "Galvanizado",
-            Uso: "Cielos rasos y estructuras horizontales"
+            Uso: "Uso en la construcción de divisiones, revoque de paredes curvas y detalles decorativos."
         },
         features: [
-            "Diseño liviano para techos",
-            "Fácil instalación",
-            "Protección contra la corrosión"
+            "Alta resistencia contra la corrosión.",
+            "Estructura liviana.",
+            "Fácil y rápido de instalar. Diseño flexible.",
+            "Es material desmontable. Es incombustible."
         ]
     },
     {
         id: "9",
-        code: "403076",
-        name: "ESQUINERO DE 31 X 31 X 0.35 X 3.00M / CONSTRUTEK",
-        description: "Perfil galvanizado tipo esquina para terminaciones en sistemas Drywall",
+        code: "402991",
+        name: "RIEL DE 65 X 25 X 0.45 X 3.00M GAL / CONSTRUTEK",
+        description: "Perfil Drywall galvanizado para construcción en seco. Son utilizados para proteccion de golpes en esquinas de muros, ventanas, puertas, y bordes en general.",
         price: 0,
         discount: 0,
         rating: 4.3,
         reviews: 7,
-        image: "/perfiles/esquinero.jpg",
+        image: "/perfiles/riel65.jpg",
         category: "Drywall",
-        subcategory: "Esquinero",
+        subcategory: "riel",
         isNew: false,
         inStock: true,
         stockDisponible: 95,
         ubicacionAlmacen: "Almacén Central",
         date: "2024-05-01",
         fichaTecnica: "https://precor.pe/admin_pmp_precor/public/data/product/download/perfiles-drywall_15542448042.pdf",
-        tags: ["esquinero", "perfil", "drywall", "terminación", "0.35mm"],
+        tags: ["riel", "perfil", "drywall", "65", "0.45mm"],
         technicalSpecs: {
-            Ancho: "31mm",
-            Alto: "31mm",
-            Espesor: "0.35mm",
+            Ancho: "65mm",
+            Alto: "25mm",
+            Espesor: "0.45mm",
             Largo: "3.00m",
             Material: "Galvanizado",
             Uso: "Protección de bordes exteriores"
         },
         features: [
-            "Protección contra impactos",
-            "Estética mejorada en esquinas",
-            "Fácil de instalar"
+            "Alta resistencia contra la corrosión.",
+            "Estructura liviana.",
+            "Fácil y rápido de instalar. Diseño flexible.",
+            "Es material desmontable. Es incombustible."
         ]
     },
     {
         id: "10",
-        code: "403066",
-        name: "ANGULO DE 20 X 20 X 0.35 X 3.00M / CONSTRUTEK",
-        description: "Ángulo galvanizado para estructuras Drywall",
+        code: "402995",
+        name: "RIEL DE 90 X 25 X 0.45 X 3.00M GAL / CONSTRUTEK",
+        description: "Perfil Drywall galvanizado para construcción en seco. Son utilizados para proteccion de golpes en esquinas de muros, ventanas, puertas, y bordes en general.",
         price: 0,
         discount: 0,
         rating: 4.1,
         reviews: 6,
-        image: "/perfiles/angulo.jpg",
+        image: "/perfiles/riel90.jpg",
         category: "Drywall",
-        subcategory: "Ángulo",
+        subcategory: "riel",
         isNew: false,
         inStock: true,
         stockDisponible: 90,
@@ -318,28 +320,29 @@ export const perfilesProducts: Product[] = [
         fichaTecnica: "https://precor.pe/admin_pmp_precor/public/data/product/download/perfiles-drywall_15542448042.pdf",
         tags: ["ángulo", "perfil", "drywall", "refuerzo", "0.35mm"],
         technicalSpecs: {
-            Ancho: "20mm",
-            Alto: "20mm",
-            Espesor: "0.35mm",
+            Ancho: "90mm",
+            Alto: "25mm",
+            Espesor: "0.45mm",
             Largo: "3.00m",
             Material: "Galvanizado",
             Uso: "Refuerzo de estructuras Drywall"
         },
         features: [
-            "Soporte adicional en esquinas",
-            "Ideal para refuerzos internos",
-            "Galvanizado resistente"
+            "Alta resistencia a la corrosión.",
+            "Fácil y rápido de instalar.",
+            "Diseño flexible para múltiples usos.",
+            "Ideal para construir muros, vigas, cielo raso, entre otros."
         ]
     }, {
         id: "11",
-        code: "403046",
-        name: "PARANTE DE 64 X 38 X 0.45 X 2.60M / CONSTRUTEK",
-        description: "Perfil galvanizado para sistemas Drywall",
+        code: "403040",
+        name: "PARANTE DE  64 X 38 X 0.90 X 3.00M / CONSTRUTEK",
+        description: "El Parante de Acero Galvanizado Metalcon 64x0.9mmx3.00m es la solución ideal para tus proyectos de construcción en seco. Con alta resistencia a la corrosión y diseño flexible, este parante es fácil y rápido de instalar. ",
         price: 0,
         discount: 0,
         rating: 4.4,
         reviews: 12,
-        image: "/perfiles/parante64.jpg",
+        image: "/perfiles/parante64pesado.jpg",
         category: "Drywall",
         subcategory: "Parante",
         isNew: false,
@@ -358,21 +361,22 @@ export const perfilesProducts: Product[] = [
             Uso: "Elemento vertical para estructuras Drywall"
         },
         features: [
-            "Alta resistencia estructural",
-            "Perfecto para muros divisorios",
-            "Compatible con soleras de 64mm"
+            "Alta resistencia a la corrosión.",
+            "Fácil y rápido de instalar.",
+            "Diseño flexible para múltiples usos.",
+            "Ideal para construir muros, vigas, cielo raso, entre otros."
         ]
     },
     {
         id: "12",
-        code: "403048",
-        name: "PARANTE DE 64 X 38 X 0.45 X 3.00M / CONSTRUTEK",
-        description: "Perfil galvanizado para sistemas Drywall",
+        code: "403047",
+        name: "PARANTE DE  89 X 38 X 0.90 X 3.00M / CONSTRUTEK",
+        description: "El Parante de Acero Galvanizado Metalcon 64x0.9mmx3.00m es la solución ideal para tus proyectos de construcción en seco. Con alta resistencia a la corrosión y diseño flexible, este parante es fácil y rápido de instalar. ",
         price: 0,
         discount: 0,
         rating: 4.4,
         reviews: 14,
-        image: "/perfiles/parante64.jpg",
+        image: "/perfiles/parante64pesado.jpg",
         category: "Drywall",
         subcategory: "Parante",
         isNew: false,
@@ -383,29 +387,30 @@ export const perfilesProducts: Product[] = [
         fichaTecnica: "https://precor.pe/admin_pmp_precor/public/data/product/download/perfiles-drywall_15542448042.pdf",
         tags: ["parante", "perfil", "drywall", "64x38", "3.00m"],
         technicalSpecs: {
-            Ancho: "64mm",
+            Ancho: "89mm",
             Alto: "38mm",
-            Espesor: "0.45mm",
+            Espesor: "0.90mm",
             Largo: "3.00m",
             Material: "Galvanizado",
             Uso: "Elemento vertical para estructuras Drywall"
         },
         features: [
-            "Mayor longitud para estructuras altas",
-            "Alta resistencia",
-            "Compatible con soleras de 64mm"
+            "Alta resistencia a la corrosión.",
+            "Fácil y rápido de instalar.",
+            "Diseño flexible para múltiples usos.",
+            "Ideal para construir muros, vigas, cielo raso, entre otros."
         ]
     },
     {
         id: "13",
-        code: "403036",
-        name: "PARANTE DE 89 X 38 X 0.45 X 2.60M / CONSTRUTEK",
-        description: "Perfil galvanizado para sistemas Drywall",
+        code: "40304756",
+        name: "PARANTE DE  38 X 38 X 0.90 X 3.00M / CONSTRUTEK",
+        description: "Perfil Drywall galvanizado para construcción en seco. Son utilizados para proteccion de golpes en esquinas de muros, ventanas, puertas, y bordes en general.",
         price: 0,
         discount: 0,
         rating: 4.5,
         reviews: 10,
-        image: "/perfiles/parante89.jpg",
+        image: "/perfiles/parante38.jpg",
         category: "Drywall",
         subcategory: "Parante",
         isNew: false,
@@ -416,64 +421,66 @@ export const perfilesProducts: Product[] = [
         fichaTecnica: "https://precor.pe/admin_pmp_precor/public/data/product/download/perfiles-drywall_15542448042.pdf",
         tags: ["parante", "perfil", "drywall", "89x38", "2.60m"],
         technicalSpecs: {
-            Ancho: "89mm",
+            Ancho: "38mm",
             Alto: "38mm",
             Espesor: "0.45mm",
-            Largo: "2.60m",
+            Largo: "3.0m",
             Material: "Galvanizado",
             Uso: "Soporte vertical para estructuras Drywall"
         },
         features: [
-            "Ideal para estructuras robustas",
-            "Gran capacidad de carga",
-            "Compatibilidad con soleras de 89mm"
+            "Alta resistencia a la corrosión.",
+            "Fácil y rápido de instalar.",
+            "Diseño flexible para múltiples usos.",
+            "Ideal para construir muros, vigas, cielo raso, entre otros."
         ]
     },
     {
         id: "14",
-        code: "403038",
-        name: "PARANTE DE 89 X 38 X 0.45 X 3.00M / CONSTRUTEK",
-        description: "Perfil galvanizado para sistemas Drywall",
+        code: "40303854",
+        name: "RIEL DE 65 X 38X 0.90 X 3.00M / CONSTRUTEK",
+        description: "Perfil Drywall galvanizado para construcción en seco. Son utilizados para proteccion de golpes en esquinas de muros, ventanas, puertas, y bordes en general.",
         price: 0,
         discount: 0,
         rating: 4.5,
         reviews: 11,
-        image: "/perfiles/parante89.jpg",
+        image: "/perfiles/riel65.jpg",
         category: "Drywall",
-        subcategory: "Parante",
+        subcategory: "riel",
         isNew: false,
         inStock: true,
         stockDisponible: 90,
         ubicacionAlmacen: "Almacén Central",
         date: "2024-05-01",
         fichaTecnica: "https://precor.pe/admin_pmp_precor/public/data/product/download/perfiles-drywall_15542448042.pdf",
-        tags: ["parante", "perfil", "drywall", "89x38", "3.00m"],
+        tags: ["riel", "perfil", "drywall", "pesado", "3.00m"],
         technicalSpecs: {
-            Ancho: "89mm",
+            Ancho: "65mm",
             Alto: "38mm",
-            Espesor: "0.45mm",
+            Espesor: "0.90mm",
             Largo: "3.00m",
             Material: "Galvanizado",
-            Uso: "Elemento vertical para estructuras Drywall de gran tamaño"
+            Uso: "Sirve como guía de parante."
         },
         features: [
-            "Resistencia superior",
-            "Ideal para construcciones amplias",
-            "Fácil instalación"
+            "Alta resistencia a la corrosión.",
+            "Fácil y rápido de instalar.",
+            "Diseño flexible para múltiples usos.",
+            "Ideal para construir muros, vigas, cielo raso, entre otros."
         ]
     },
     {
         id: "15",
-        code: "403071",
-        name: "OMEGA DE 35 X 10 X 0.45 X 3.00M / CONSTRUTEK",
-        description: "Perfil omega para suspensión de cielo raso en Drywall",
+        code: "402993",
+        name: "RIEL DE 90 X 38X 0.90 X 3.00M / CONSTRUTEK",
+        description: "Perfil Drywall galvanizado para construcción en seco. Son utilizados para proteccion de golpes en esquinas de muros, ventanas, puertas, y bordes en general.",
         price: 0,
         discount: 0,
         rating: 4.3,
         reviews: 9,
-        image: "/perfiles/omega.jpg",
+        image: "/perfiles/riel65.jpg",
         category: "Drywall",
-        subcategory: "omega",
+        subcategory: "riel",
         isNew: false,
         inStock: true,
         stockDisponible: 80,
@@ -482,50 +489,52 @@ export const perfilesProducts: Product[] = [
         fichaTecnica: "https://precor.pe/admin_pmp_precor/public/data/product/download/perfiles-drywall_15542448042.pdf",
         tags: ["omega", "perfil", "drywall", "suspensión", "0.45mm"],
         technicalSpecs: {
-            Ancho: "35mm",
+            Ancho: "90mm",
             Alto: "10mm",
-            Espesor: "0.45mm",
+            Espesor: "0.90mm",
             Largo: "3.00m",
             Material: "Galvanizado",
-            Uso: "Soporte para estructuras suspendidas"
+            Uso: "Sirve como guía de parante."
         },
         features: [
-            "Ideal para cielos rasos",
-            "Fácil de instalar",
-            "Durabilidad garantizada"
+            "Alta resistencia a la corrosión.",
+            "Fácil y rápido de instalar.",
+            "Diseño flexible para múltiples usos.",
+            "Ideal para construir muros, vigas, cielo raso, entre otros."
         ]
     },
     {
         id: "16",
-        code: "403068",
-        name: "OMEGA DE 38 X 10 X 0.45 X 3.00M / CONSTRUTEK",
-        description: "Perfil omega para suspensión de cielo raso en Drywall",
+        code: "40299339",
+        name: "RIEL DE 39 X 38X 0.90 X 3.00M / CONSTRUTEK",
+        description: "Perfil Drywall galvanizado para construcción en seco. Son utilizados para proteccion de golpes en esquinas de muros, ventanas, puertas, y bordes en general.",
         price: 0,
         discount: 0,
         rating: 4.3,
         reviews: 10,
-        image: "/perfiles/omega.jpg",
+        image: "/perfiles/riel39.jpg",
         category: "Drywall",
-        subcategory: "Omega",
+        subcategory: "riel",
         isNew: false,
         inStock: true,
         stockDisponible: 85,
         ubicacionAlmacen: "Almacén Central",
         date: "2024-05-01",
         fichaTecnica: "https://precor.pe/admin_pmp_precor/public/data/product/download/perfiles-drywall_15542448042.pdf",
-        tags: ["omega", "perfil", "drywall", "cielo raso", "0.45mm"],
+        tags: ["riel", "perfil", "drywall", "cielo raso", "0.90mm"],
         technicalSpecs: {
-            Ancho: "38mm",
-            Alto: "10mm",
-            Espesor: "0.45mm",
+            Ancho: "39mm",
+            Alto: "38mm",
+            Espesor: "0.90mm",
             Largo: "3.00m",
             Material: "Galvanizado",
-            Uso: "Suspensión de cielo raso en Drywall"
+            Uso: "Sirve como guía de parante."
         },
         features: [
-            "Soporte preciso para techos",
-            "Estructura resistente y liviana",
-            "Anticorrosión garantizada"
+            "Alta resistencia a la corrosión.",
+            "Fácil y rápido de instalar.",
+            "Diseño flexible para múltiples usos.",
+            "Ideal para construir muros, vigas, cielo raso, entre otros."
         ]
     }
 ];
