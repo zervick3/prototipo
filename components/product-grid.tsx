@@ -32,6 +32,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
                 src={product.image || "/placeholder.svg"}
                 alt={product.name}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                 className="object-cover transition-transform duration-300 hover:scale-105"
               />
               <div className="absolute left-2 top-2 flex flex-col gap-2">

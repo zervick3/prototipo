@@ -13,7 +13,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/s
 export default function ProductCatalog() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const [sortBy, setSortBy] = useState("featured")
-  const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null)
+  const [selectedSubcategory, setSelectedSubcategory] = useState<string>("all")
   const [isSheetOpen, setIsSheetOpen] = useState(false)
 
   // Función para ordenar productos
@@ -82,7 +82,7 @@ export default function ProductCatalog() {
               </SelectContent>
             </Select>
 
-            <Select value={selectedSubcategory ?? undefined} onValueChange={setSelectedSubcategory}>
+            <Select value={selectedSubcategory} onValueChange={setSelectedSubcategory}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Filtrar por subcategoría" />
               </SelectTrigger>

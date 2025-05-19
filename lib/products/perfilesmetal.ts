@@ -111,7 +111,7 @@ export const perfilesProducts: Product[] = [
         reviews: 13,
         image: "/perfiles/omega.jpg",
         category: "Drywall",
-        subcategory: "Omega",
+        subcategory: "omega",
         isNew: false,
         inStock: true,
         stockDisponible: 75,

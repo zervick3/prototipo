@@ -1,23 +1,61 @@
 // dataCategoria.ts
 import type { Category, Subcategory } from "./types";
-import { Hammer, Wrench, Ruler, Paintbrush, Lightbulb, Shield } from "lucide-react"; // Asegúrate de importar los íconos necesarios
+import { Hammer,Layers2,Cuboid,LibraryBig, Wrench, Ruler, Paintbrush, Lightbulb, Shield } from "lucide-react"; // Asegúrate de importar los íconos necesarios
 
 export const categories: Category[] = [
     {
-        name: "Drywall",
+        name: "Placas De Drywall",
         slug: "Drywall",
-        icon: <Hammer className="h-5 w-5" />,
+        icon: <Layers2 className="h-5 w-5" />,
         color: "category-gradient-6",
         subcategories: [
             { name: "Placas de Yesos", slug: "placas" },
+            { name: "Superboard", slug: "superboard" },
+        ],
+        
+    },
+    {
+        name: "Perfiles Metalicos",
+        slug: "Drywallperfiles",
+        icon: <LibraryBig className="h-5 w-5" />,
+        color: "category-gradient-6",
+        subcategories: [
             { name: "Parantes", slug: "Parante" },
             { name: "Rieles", slug: "riel" },
             { name: "Omega", slug: "omega" },
             { name: "Esquineros", slug: "esquinero" },
-            { name: "Superboard", slug: "superboard" },
-            { name: "Masillas", slug: "masillas" },
-            { name: "Cintas", slug: "cintas" },
         ],
+        
+    },
+    {
+        name: "Cintas Para Drywall",
+        slug: "cintas",
+        icon: <LibraryBig className="h-5 w-5" />,
+        color: "category-gradient-6",
+        subcategories: [
+            { name: "Cinta malla de vidrio 2'", slug: "cintavidrio" },
+            { name: "Cinta papel", slug: "cintapapel" },
+            { name: "Cinta Metalica", slug: "cintametalica" },
+            
+        ],
+        
+    },
+    {
+        name: "Masillas Para Drywall",
+        slug: "masillas",
+        icon: <Cuboid className="h-5 w-5" />,
+        color: "category-gradient-6",
+        subcategories: [
+            { name: "Masilla Gyplac 20kg", slug: "masillas" },
+            { name: "Masila Balde Gyplac 27kg ", slug: "masillas" },
+            { name: "Masilla 5kg", slug: "masillas" },
+            { name: "Masilla en Polvo 25kg Gyplac", slug: "masillas" },
+            { name: "Masilla en Polvo 25kg Volcan", slug: "masillas" },
+            { name: "Masilla Volcan 20kg", slug: "masillas" },
+            { name: "Masilla Construtek 20kg", slug: "masillas" },
+            
+        ],
+        
     },
     {
         name: "Cielo Raso",
@@ -25,10 +63,10 @@ export const categories: Category[] = [
         icon: <Hammer className="h-5 w-5" />,
         color: "category-gradient-3",
         subcategories: [
-            { name: "Principales", slug: "principales" },
-            { name: "Secundarios", slug: "secundarios" },
-            { name: "Terciaria", slug: "terciaria" },
-            { name: "Angulo perimetral", slug: "angulo" },
+            { name: "Susp Tee Principales", slug: "principales" },
+            { name: "Susp Tee Secundarios", slug: "secundarios" },
+            { name: "Susp Tee Terciaria", slug: "terciaria" },
+            { name: "Angulo Susp Perimetral", slug: "angulo" },
             { name: "Alambre", slug: "alambre" },
         ],
     },

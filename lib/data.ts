@@ -8,7 +8,7 @@ import { cintasProducts } from "@/lib/products/cintas";
 import { baldosasProducts } from "@/lib/products/baldosas";
 
 const Mainproducts: Product[] = []
-export const products: Product[] = [
+export const rawproducts: Product[] = [
   ...Mainproducts,
   ...placaProducts,
   ...superboardProducts,
@@ -18,3 +18,8 @@ export const products: Product[] = [
   ...cintasProducts,
   ...baldosasProducts,
 ]
+// Asigna un id único si no existe o si hay repetidos
+export const products: Product[] = rawproducts.map((product, idx) => ({
+  ...product,
+  id: product.id ? `${product.id}-${idx}` : `prod-${idx + 1}`,
+}))

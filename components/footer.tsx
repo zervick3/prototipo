@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container px-4 py-8 md:px-6 md:py-12">
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div>
-            <h3 className="mb-4 text-lg font-semibold">FerreMax Pro</h3>
+            <h3 className="mb-4 text-lg font-semibold">METALDRYLL</h3>
             <p className="text-sm text-muted-foreground">
               Ofrecemos las mejores herramientas y productos de ferretería para profesionales y aficionados al
               bricolaje.
@@ -114,7 +114,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} FerreMax Pro. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} METALDRYLL. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

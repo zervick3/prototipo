@@ -25,7 +25,7 @@ export default function Header() {
             >
               {/* Espacio para el logo */}
               <div className="flex h-full w-full items-center justify-center text-lg font-bold text-primary-foreground">
-                FP
+                M
               </div>
             </motion.div>
             <motion.span
@@ -34,7 +34,7 @@ export default function Header() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              FerreMax Pro
+              METALDRYLL
             </motion.span>
           </Link>
         </div>

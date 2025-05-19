@@ -13,7 +13,7 @@ import { products } from "@/lib/data"
 
 export default function ProductPage({ params }: { params: { id: string } }) {
   const router = useRouter()
-  const product = products.find((p) => p.id === params.id)
+  const product = products.find(p => p.id === params.id);
   const [activeImage, setActiveImage] = useState(0)
 
   if (!product) {
@@ -57,6 +57,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                 src={productImages[activeImage] || "/placeholder.svg"}
                 alt={product.name}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                 className="object-contain"
               />
             </motion.div>

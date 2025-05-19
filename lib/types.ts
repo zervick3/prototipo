@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 export interface Product {
   id: string
   code: string
@@ -22,15 +23,19 @@ export interface Product {
   }
   features: string[]
 }
-export interface Subcategory {
+export type Subcategory = {
   name: string;
   slug: string;
-}
+  icon?: ReactNode;
+  color?: string;
+  subcategories?: Subcategory[];
+};
 
-export interface Category {
+export type Category = {
   name: string;
   slug: string;
-  icon: React.ReactNode;
-  color: string;
-  subcategories?: { name: string; slug: string }[]
-}
+  icon?: ReactNode;
+  color?: string;
+  subcategories?: Subcategory[];
+};
+
