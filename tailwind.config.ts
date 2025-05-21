@@ -11,6 +11,7 @@ const config = {
   ],
   prefix: "",
   theme: {
+    
     container: {
       center: true,
       padding: "2rem",
@@ -20,18 +21,25 @@ const config = {
     },
     extend: {
       colors: {
+          
+      
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        primaryy: "#ffb805",
+        secondaryy: "#000b3c",
+        terciaryy: "#CE0253",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          primary: "#ffb805",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+          secondary: "#000b3c",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",

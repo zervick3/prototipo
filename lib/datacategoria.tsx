@@ -7,10 +7,12 @@ export const categories: Category[] = [
         name: "Placas De Drywall",
         slug: "Drywall",
         icon: <Layers2 className="h-5 w-5" />,
-        color: "category-gradient-6",
+        color: "category-gradient-1",
         subcategories: [
             { name: "Placas de Yesos", slug: "placas" },
             { name: "Superboard", slug: "superboard" },
+            { name: "Superboard Texturada Madera", slug: "superboardt" },
+            { name: "Simplisima", slug: "simplisima" },
         ],
         
     },
@@ -18,7 +20,7 @@ export const categories: Category[] = [
         name: "Perfiles Metalicos",
         slug: "Drywallperfiles",
         icon: <LibraryBig className="h-5 w-5" />,
-        color: "category-gradient-6",
+        color: "category-gradient-1",
         subcategories: [
             { name: "Parantes", slug: "Parante" },
             { name: "Rieles", slug: "riel" },
@@ -31,7 +33,7 @@ export const categories: Category[] = [
         name: "Cintas Para Drywall",
         slug: "cintas",
         icon: <LibraryBig className="h-5 w-5" />,
-        color: "category-gradient-6",
+        color: "category-gradient-1",
         subcategories: [
             { name: "Cinta malla de vidrio 2'", slug: "cintavidrio" },
             { name: "Cinta papel", slug: "cintapapel" },
@@ -44,15 +46,16 @@ export const categories: Category[] = [
         name: "Masillas Para Drywall",
         slug: "masillas",
         icon: <Cuboid className="h-5 w-5" />,
-        color: "category-gradient-6",
+        color: "category-gradient-1",
         subcategories: [
-            { name: "Masilla Gyplac 20kg", slug: "masillas" },
-            { name: "Masila Balde Gyplac 27kg ", slug: "masillas" },
-            { name: "Masilla 5kg", slug: "masillas" },
-            { name: "Masilla en Polvo 25kg Gyplac", slug: "masillas" },
-            { name: "Masilla en Polvo 25kg Volcan", slug: "masillas" },
-            { name: "Masilla Volcan 20kg", slug: "masillas" },
-            { name: "Masilla Construtek 20kg", slug: "masillas" },
+            { name: "Masilla Gyplac 20kg", slug: "masillasG20" },
+            { name: "Masila Balde Gyplac 27kg ", slug: "masillasG27" },
+            { name: "Masilla 5kg", slug: "masillasG5" },
+            { name: "Masilla ANTIHUMEDAD 15kg Gyplac", slug: "masillasG15" },
+            { name: "Masilla en Polvo 25kg GYPLAC", slug: "masillasGP25" },
+            { name: "Masilla en Polvo 25kg Volcan", slug: "masillasVP25" },
+            { name: "Masilla Volcan 20kg", slug: "masillasV20" },
+            { name: "Masilla Construtek 20kg", slug: "masillasC20" },
             
         ],
         
@@ -61,8 +64,11 @@ export const categories: Category[] = [
         name: "Cielo Raso",
         slug: "Cielo Raso",
         icon: <Hammer className="h-5 w-5" />,
-        color: "category-gradient-3",
+        color: "category-gradient-1",
         subcategories: [
+            { name: "Baldosa de Vinil", slug: "baldosavinil" },
+            { name: "Baldosa Fibra Mineral CTK ", slug: "baldosacosntrutek" },
+            { name: "Baldosa Fibrocemento ", slug: "baldosafibrocemento" },
             { name: "Susp Tee Principales", slug: "principales" },
             { name: "Susp Tee Secundarios", slug: "secundarios" },
             { name: "Susp Tee Terciaria", slug: "terciaria" },
@@ -73,7 +79,7 @@ export const categories: Category[] = [
     {
         name: "Herramientas Manuales",
         slug: "herramientas-manuales",
-        icon: <Hammer className="h-5 w-5" />,
+        icon: <Hammer className="h-5 w-6" />,
         color: "category-gradient-1",
         subcategories: [
             { name: "Martillos", slug: "martillos" },
@@ -86,7 +92,7 @@ export const categories: Category[] = [
         name: "Herramientas Eléctricas",
         slug: "herramientas-electricas",
         icon: <Wrench className="h-5 w-5" />,
-        color: "category-gradient-2",
+        color: "category-gradient-1",
         subcategories: [
             { name: "Taladros", slug: "taladros" },
             { name: "Sierras", slug: "sierras" },
@@ -98,7 +104,7 @@ export const categories: Category[] = [
         name: "Medición y Nivelación",
         slug: "medicion-nivelacion",
         icon: <Ruler className="h-5 w-5" />,
-        color: "category-gradient-3",
+        color: "category-gradient-1",
         subcategories: [
             { name: "Cintas métricas", slug: "cintas-metricas" },
             { name: "Niveles", slug: "niveles" },
@@ -109,7 +115,7 @@ export const categories: Category[] = [
         name: "Pinturas y Acabados",
         slug: "pinturas-acabados",
         icon: <Paintbrush className="h-5 w-5" />,
-        color: "category-gradient-4",
+        color: "category-gradient-1",
         subcategories: [
             { name: "Pinturas", slug: "pinturas" },
             { name: "Brochas y Rodillos", slug: "brochas-rodillos" },
@@ -120,7 +126,7 @@ export const categories: Category[] = [
         name: "Iluminación",
         slug: "iluminacion",
         icon: <Lightbulb className="h-5 w-5" />,
-        color: "category-gradient-5",
+        color: "category-gradient-1",
         subcategories: [
             { name: "Lámparas", slug: "lamparas" },
             { name: "Focos LED", slug: "focos-led" },
@@ -131,7 +137,7 @@ export const categories: Category[] = [
         name: "Seguridad",
         slug: "seguridad",
         icon: <Shield className="h-5 w-5" />,
-        color: "category-gradient-6",
+        color: "category-gradient-1",
         subcategories: [
             { name: "Cascos", slug: "cascos" },
             { name: "Guantes", slug: "guantes" },

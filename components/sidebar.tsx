@@ -54,16 +54,17 @@ export default function Sidebar({ onSelectSubcategory = () => { } }: SidebarProp
                 onHoverEnd={() => setHoveredCategory(null)}
               >
                 <motion.div
-                  className={`rounded-lg overflow-hidden ${hoveredCategory === category.slug ? "ring-2 ring-primary/50" : ""}`}
+                  className={`rounded-lg overflow-hidden ${hoveredCategory === category.slug ? "ring-2 ring-primaryy/50 " : ""}`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <Button
                     variant="ghost"
                     className={cn(
-                      "w-full justify-start gap-2 font-medium text-white",
+                      "w-full justify-start gap-2 font-medium text-white hover:text-white",
                       category.color,
                       openCategories.includes(category.slug) ? "opacity-100" : "opacity-90",
+                       hoveredCategory === category.slug && "text-white" // <-- Esto fuerza el texto blanco en hover
                     )}
                     onClick={() => toggleCategory(category.slug)}
                   >
@@ -97,7 +98,7 @@ export default function Sidebar({ onSelectSubcategory = () => { } }: SidebarProp
                         >
                           <Button
                             variant="ghost"
-                            className="w-full justify-start pl-6 font-normal"
+                            className="w-full justify-start pl-6 font-normal "
 
                             onClick={
                               () => {

@@ -84,7 +84,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
               </div>
 
               <Link href={`/producto/${product.id}`} className="group">
-                <h3 className="line-clamp-2 font-medium group-hover:text-primary group-hover:underline transition-colors">
+                <h3 className="line-clamp-2 font-medium group-hover:text-primaryy group-hover:underline transition-colors">
                   {product.name}
                 </h3>
               </Link>
@@ -141,7 +141,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
 
             <CardFooter className="p-4 pt-0">
               <Link href={`/producto/${product.id}`} className="w-full">
-                <Button className="w-full shine-effect">Ver detalles</Button>
+                <Button className="w-full shine-effect bg-primaryy">Ver detalles</Button>
               </Link>
             </CardFooter>
           </Card>

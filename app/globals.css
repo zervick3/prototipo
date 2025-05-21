@@ -4,6 +4,9 @@
 
 @layer base {
   :root {
+    --primaryy: #ffb805;
+    --secondaryy: #000b3c;
+    --terciaryy: #CE0253;
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -77,27 +80,30 @@
 
 /* Gradientes para categorías */
 .category-gradient-1 {
-  background: linear-gradient(135deg, #ff9966, #ff5e62);
+ background: linear-gradient(135deg, #000b3c, #2b3f6c);
 }
 
 .category-gradient-2 {
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  background: linear-gradient(135deg, #000b3c, #3c3c3c);
+  
 }
 
 .category-gradient-3 {
-  background: linear-gradient(135deg, #43e97b, #38f9d7);
+ background: linear-gradient(135deg, #000b3c, #3a6fff);
+ 
 }
 
 .category-gradient-4 {
-  background: linear-gradient(135deg, #fa709a, #fee140);
+  background: linear-gradient(135deg, #000b3c, #2b0f54);
+  
 }
 
 .category-gradient-5 {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #000b3c, #ffb805);
 }
 
 .category-gradient-6 {
-  background: linear-gradient(135deg, #f6d365, #fda085);
+      background: linear-gradient(135deg, #000b3c, #1a1f60, #344576);
 }
 
 /* Efecto de brillo para botones */
