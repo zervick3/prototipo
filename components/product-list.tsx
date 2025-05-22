@@ -128,7 +128,7 @@ export default function ProductList({ products }: ProductListProps) {
                   </div>
 
                   <Link href={`/producto/${product.id}`}>
-                    <Button className="shine-effect gap-1 bg-secondaryy">
+                    <Button className="shine-effect gap-1 bg-primaryy text-white hover:bg-primaryy/90 hover:text-terciaryy transition-colors">
                       Ver detalles
                       <ChevronRight className="h-4 w-4" />
                     </Button>

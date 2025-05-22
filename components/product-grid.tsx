@@ -26,7 +26,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
           whileHover={{ y: -5 }}
           className="card-3d-effect w-full max-w-xs mx-auto"
         >
-          <Card className="w-full h-full overflow-hidden border-2 border-transparent transition-all duration-300 hover:border-primary/20 hover:shadow-lg">
+          <Card className="w-full h-full overflow-hidden border-2 border-transparent transition-all duration-300 hover:border-primaryy hover:shadow-lg">
             <div className="relative aspect-square overflow-hidden">
               <Image
                 src={product.image || "/placeholder.svg"}
@@ -141,7 +141,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
 
             <CardFooter className="p-4 pt-0">
               <Link href={`/producto/${product.id}`} className="w-full">
-                <Button className="w-full shine-effect bg-primaryy">Ver detalles</Button>
+                <Button className="w-full shine-effect bg-primaryy text-white hover:bg-primaryy/90 hover:text-terciaryy transition-colors">Ver detalles</Button>
               </Link>
             </CardFooter>
           </Card>
