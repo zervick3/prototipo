@@ -23,12 +23,16 @@ export interface Product {
   }
   features: string[]
 }
+export interface SubSubcategory {
+  name: string
+  slug: string
+}
 export type Subcategory = {
   name: string;
   slug: string;
   icon?: ReactNode;
   color?: string;
-  subcategories?: Subcategory[];
+  subcategories?: SubSubcategory[];
 };
 
 export type Category = {

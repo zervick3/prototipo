@@ -21,7 +21,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
       <div className="container flex flex-col items-center justify-center py-20">
         <h1 className="text-2xl font-bold">Producto no encontrado</h1>
         <p className="mt-2 text-muted-foreground">El producto que buscas no existe o ha sido eliminado.</p>
-        <Button className="mt-4" onClick={() => router.push("/")}>
+        <Button className="mt-4 " onClick={() => router.push("/")}>
           Volver al catálogo
         </Button>
       </div>
@@ -37,7 +37,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
   return (
     <div className="container px-4 py-8 md:px-6 md:py-12">
-      <Button variant="ghost" className="mb-6 flex items-center gap-1" onClick={() => router.push("/")}>
+      <Button variant="ghost" className="mb-6 flex items-center  gap-1" onClick={() => router.push("/")}>
         <ChevronLeft className="h-4 w-4" />
         Volver al catálogo
       </Button>
@@ -100,7 +100,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
               <motion.button
                 key={index}
                 className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border ${
-                  activeImage === index ? "ring-2 ring-primary" : ""
+                  activeImage === index ? "ring-2 ring-primaryy" : ""
                 }`}
                 onClick={() => setActiveImage(index)}
                 whileHover={{ scale: 1.05 }}
@@ -133,7 +133,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
             <div className="mt-4 flex items-center gap-3">
               <motion.span
-                className="text-3xl font-bold text-primary"
+                className="text-3xl font-bold text-primaryy"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -211,13 +211,13 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link href="/" className="w-full">
-              <Button className="w-full shine-effect" size="lg">
+              <Button className="w-full shine-effect  bg-primaryy text-white hover:bg-primaryy/90 hover:text-terciaryy transition-colors" size="lg">
                 Ver productos similares
               </Button>
             </Link>
           </div>
 
-          <div className="rounded-lg border bg-muted/40 p-4">
+          <div className="rounded-lg border border-primaryy bg-muted/40 p-4">
             <h3 className="mb-2 font-semibold">Información adicional</h3>
             <p className="text-sm text-muted-foreground">
               Este producto cuenta con {product.technicalSpecs.Garantía} de garantía del fabricante. Consulta nuestras
@@ -243,7 +243,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                 className="card-3d-effect"
               >
                 <Link href={`/producto/${relatedProduct.id}`}>
-                  <div className="group rounded-lg border bg-card p-2 transition-all duration-300 hover:border-primary/20 hover:shadow-md">
+                  <div className="group rounded-lg border bg-card p-2 transition-all duration-300 hover:border-primaryy hover:shadow-md">
                     <div className="relative aspect-square overflow-hidden rounded-md bg-muted">
                       <Image
                         src={relatedProduct.image || "/placeholder.svg"}
@@ -256,7 +256,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                       )}
                     </div>
                     <div className="p-2">
-                      <h3 className="line-clamp-1 font-medium group-hover:text-primary">{relatedProduct.name}</h3>
+                      <h3 className="line-clamp-1 font-medium group-hover:text-primaryy">{relatedProduct.name}</h3>
                       <div className="mt-1 flex items-center justify-between">
                         <span className="font-bold">${relatedProduct.price.toFixed(2)}</span>
                         <div className="flex">
