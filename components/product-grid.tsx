@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { Star, Info, Tag, Zap } from "lucide-react"
+import { Star, Info, Tag, Zap,Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
@@ -97,14 +97,16 @@ export default function ProductGrid({ products }: ProductGridProps) {
                     <TooltipTrigger asChild>
                       <Button variant="outline" size="sm" className="h-7 rounded-full">
                         <Info className="h-3.5 w-3.5 mr-1" /> Ficha técnica
+                     
                       </Button>
+                      
                     </TooltipTrigger>
                     <TooltipContent className="max-w-xs">
                       <div className="space-y-1 text-xs">
                         <h4 className="font-semibold">Especificaciones:</h4>
                         <ul className="list-disc pl-4 space-y-0.5">
                           {Object.entries(product.technicalSpecs)
-                            .slice(0, 4)
+                            .slice(0, 7)
                             .map(([key, value]) => (
                               <li key={key}>
                                 <span className="font-medium">{key}:</span> {value}
@@ -115,6 +117,18 @@ export default function ProductGrid({ products }: ProductGridProps) {
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
+                {product.fichaTecnica && product.fichaTecnica.length > 0 && (
+                        <a
+                          href={product.fichaTecnica}
+                          download
+                          target="_blank"
+                          rel="noopener noreferrer"
+                           className="inline-flex items-center gap-1 px-3 py-1 rounded bg-primaryy text-white hover:bg-primaryy/80 transition text-sm h-7 rounded-full"
+                             >
+                           <Download className="w-3.5 h-3.5 " />
+      
+                         </a>
+                         )}
               </div>
 
               <div className="mt-3 flex items-center gap-2">
@@ -124,16 +138,18 @@ export default function ProductGrid({ products }: ProductGridProps) {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  ${product.price.toFixed(2)}
-                </motion.span>
+                  {/* PRecio del preducto */}
+                 {/* ${product.price.toFixed(2)}*/} 
+             </motion.span>
                 {product.discount > 0 && (
-                  <motion.span
+                   <motion.span
                     className="text-sm text-muted-foreground line-through"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3 }}
                   >
-                    ${(product.price / (1 - product.discount / 100)).toFixed(2)}
+                    {/* Precio original con descuento */}
+                   {/* ${(product.price / (1 - product.discount / 100)).toFixed(2)}*/}
                   </motion.span>
                 )}
               </div>

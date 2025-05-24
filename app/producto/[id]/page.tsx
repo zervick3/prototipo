@@ -29,11 +29,13 @@ export default function ProductPage({ params }: { params: { id: string } }) {
   }
 
   // Simular múltiples imágenes para el producto
-  const productImages = [
-    product.image,
-    "/placeholder.svg?height=400&width=400&text=Vista+Lateral",
-    "/placeholder.svg?height=400&width=400&text=Vista+Posterior",
-  ]
+  const productImages = product.images && product.images.length > 0
+  ? product.images
+  : [
+      product.image,
+      "/logoicono.ico",
+      "/22.jpg",
+    ];
 
   return (
     <div className="container px-4 py-8 md:px-6 md:py-12">

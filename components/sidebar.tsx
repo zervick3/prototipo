@@ -82,7 +82,11 @@ export default function Sidebar({ onSelectSubcategory = () => {} }: SidebarProps
                                            ? "bg-primaryy text-terciaryy"
                                            : "hover:bg-primaryy hover:text-terciaryy "
                                     )}
-                            onClick={() => toggle(subcat.slug, true)}
+                           onClick={() =>
+                                         subcat.subcategories
+                                         ? toggle(subcat.slug, true)
+                                         : onSelectSubcategory(subcat.slug)
+                                   }
                           >
                             {subcat.name}
                             {subcat.subcategories ? (

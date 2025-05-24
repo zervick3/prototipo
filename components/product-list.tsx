@@ -113,7 +113,8 @@ export default function ProductList({ products }: ProductListProps) {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.2 }}
                     >
-                      ${product.price.toFixed(2)}
+                          {/* PRecio del preducto */}
+                     {/* ${product.price.toFixed(2)} */} 
                     </motion.span>
                     {product.discount > 0 && (
                       <motion.span
@@ -122,7 +123,8 @@ export default function ProductList({ products }: ProductListProps) {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3 }}
                       >
-                        ${(product.price / (1 - product.discount / 100)).toFixed(2)}
+                        {/* Precio original con descuento */}
+                       {/* ${(product.price / (1 - product.discount / 100)).toFixed(2)}*/}
                       </motion.span>
                     )}
                   </div>

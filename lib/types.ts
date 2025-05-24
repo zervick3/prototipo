@@ -9,6 +9,7 @@ export interface Product {
   rating: number
   reviews: number
   image: string
+  images?: string[]
   category: string
   subcategory: string
   isNew: boolean

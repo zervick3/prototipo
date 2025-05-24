@@ -31,7 +31,7 @@ export const categories: Category[] = [
         name: "Perfiles Metálicos",
         slug: "perfiles-metalicos",
         subcategories: [
-          { name: "Parantes", slug: "parante" },
+          { name: "Parantes", slug: "Parante" },
           { name: "Rieles", slug: "riel" },
           { name: "Omega", slug: "omega" },
           { name: "Esquineros", slug: "esquinero" },
@@ -64,7 +64,7 @@ export const categories: Category[] = [
   },
 
 
-  
+
   // Otras categorías generales aquí ↓
   {
     name: "Cielo Raso",
@@ -92,6 +92,16 @@ export const categories: Category[] = [
       { name: "Destornilladores", slug: "destornilladores" },
       { name: "Llaves", slug: "llaves" },
       { name: "Alicates", slug: "alicates" },
+    ],
+  },
+  {
+    name: "Herramientas inalámbricas",
+    slug: "herramientas-inalámbricas",
+    icon: <Hammer className="h-5 w-6" />,
+    color: "category-gradient-1",
+    subcategories: [
+      { name: "Atornilladores Inalámbricos", slug: "impacto" },
+      
     ],
   },
   {
