@@ -1,5 +1,5 @@
 "use client"
-
+import { useSearch } from "@/components/Search"
 import { useState } from "react"
 import Link from "next/link"
 import { Menu, Search, User } from "lucide-react"
@@ -8,9 +8,18 @@ import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Image from "next/image"
 import { motion } from "framer-motion"
-
+import { products } from "@/lib/data"
 export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const { searchValue, setSearchValue } = useSearch()
+  // Filtrar productos por nombre
+  const filteredProducts = products.filter(product =>
+    product.name.toLowerCase().includes(searchValue.toLowerCase()) && searchValue.length > 0
+  )
+
+
+
+
 
   return (
     <header className="sticky top-0 z-40 border-b border-primaryy bg-secondary shadow-md">
@@ -28,7 +37,7 @@ export default function Header() {
               width={140}
               height={40}
               className="object-contain"
-              priority
+              style={{ height: "40px", width: "auto" }}
             />
           </motion.div>
         </Link>
@@ -40,6 +49,8 @@ export default function Header() {
             <Input
               type="search"
               placeholder="Buscar productos..."
+              value={searchValue}
+              onChange={e => setSearchValue(e.target.value)}
               className="w-full rounded-full border border-primaryy bg-white pl-10  text-secondaryy shadow-sm focus:ring-2 focus:ring-primaryy"
             />
           </div>
@@ -74,14 +85,18 @@ export default function Header() {
 
       {/* Buscador expandido en mobile */}
       {isSearchOpen && (
-        <div className="border-t border-primary bg-white p-4 md:hidden">
+        <div className="border-t border-primaryy bg-white p-4 md:hidden">
           <div className="relative w-full">
-            <Search className="absolute left-3 top-3 h-5 w-5 text-primary" />
+            <Search className="absolute left-3 top-3 h-5 w-5 text-primaryy" />
             <Input
               type="search"
               placeholder="Buscar productos..."
-              className="w-full rounded-full border border-primary pl-10 text-secondary shadow-sm focus:ring-2 focus:ring-primary"
+              value={searchValue}
+              onChange={e => setSearchValue(e.target.value)}
+              className="w-full rounded-full border border-primaryy pl-10 text-secondaryy shadow-sm focus:ring-primaryy focus:ring-primaryy"
             />
+
+
           </div>
         </div>
       )}

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { Star, Tag, Zap, ChevronRight } from "lucide-react"
+import { Star, Tag, Zap, ChevronRight, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
@@ -101,6 +101,18 @@ export default function ProductList({ products }: ProductListProps) {
                             </div>
                           ))}
                       </div>
+                      {product.fichaTecnica && product.fichaTecnica.length > 0 && (
+                        <a
+                          href={product.fichaTecnica}
+                          download
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-3 py-1 rounded bg-primaryy text-white hover:bg-primaryy/80 transition text-sm h-7 rounded-full"
+                        >
+                          <Download className="w-3.5 h-3.5 " />
+
+                        </a>
+                      )}
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
@@ -113,8 +125,8 @@ export default function ProductList({ products }: ProductListProps) {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.2 }}
                     >
-                          {/* PRecio del preducto */}
-                     {/* ${product.price.toFixed(2)} */} 
+                      {/* PRecio del preducto */}
+                      {/* ${product.price.toFixed(2)} */}
                     </motion.span>
                     {product.discount > 0 && (
                       <motion.span
@@ -124,9 +136,10 @@ export default function ProductList({ products }: ProductListProps) {
                         transition={{ delay: 0.3 }}
                       >
                         {/* Precio original con descuento */}
-                       {/* ${(product.price / (1 - product.discount / 100)).toFixed(2)}*/}
+                        {/* ${(product.price / (1 - product.discount / 100)).toFixed(2)}*/}
                       </motion.span>
                     )}
+
                   </div>
 
                   <Link href={`/producto/${product.id}`}>

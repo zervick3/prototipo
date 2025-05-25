@@ -9,12 +9,15 @@ import ProductList from "./product-list"
 import Sidebar from "./sidebar"
 import { products } from "@/lib/data"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
-
+import { useSearch } from "@/components/Search"
 export default function ProductCatalog() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const [sortBy, setSortBy] = useState("featured")
   const [selectedSubcategory, setSelectedSubcategory] = useState<string>("all")
   const [isSheetOpen, setIsSheetOpen] = useState(false)
+  const { searchValue } = useSearch()
+  // Filtrar productos por nombre
+
 
   // Función para ordenar productos
   const getSortedProducts = () => {
@@ -34,11 +37,15 @@ export default function ProductCatalog() {
   const sortedProducts = getSortedProducts()
 
   // Filtrar productos por subcategoría seleccionada
-  const filteredProducts = sortedProducts.filter(product =>
-    selectedSubcategory && selectedSubcategory !== "all"
-      ? product.subcategory === selectedSubcategory
-      : true
-  )
+  const filteredProducts = products
+    .filter(product =>
+      product.name.toLowerCase().includes(searchValue.toLowerCase())
+    )
+    .filter(product =>
+      selectedSubcategory && selectedSubcategory !== "all"
+        ? product.subcategory === selectedSubcategory
+        : true
+    )
 
   // Obtener las subcategorías únicas de los productos
   const subcategories = Array.from(new Set(products.map((product) => product.subcategory)))
@@ -58,7 +65,7 @@ export default function ProductCatalog() {
             <span className="sr-only">Toggle menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="w-[80vw] sm:w-[300px]">
+        <SheetContent aria-describedby={undefined} side="left" className="w-[80vw] sm:w-[300px]">
           <SheetTitle className="sr-only">Menú de categorías</SheetTitle>
           <Sidebar onSelectSubcategory={(slug) => { setSelectedSubcategory(slug); setIsSheetOpen(false); }} />
         </SheetContent>
