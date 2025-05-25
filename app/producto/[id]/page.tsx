@@ -30,8 +30,8 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
   // Simular múltiples imágenes para el producto
   const productImages = product.images && product.images.length > 0
-  ? product.images
-  : [
+    ? product.images
+    : [
       product.image,
       "/logoicono.ico",
       "/22.jpg",
@@ -101,9 +101,8 @@ export default function ProductPage({ params }: { params: { id: string } }) {
             {productImages.map((img, index) => (
               <motion.button
                 key={index}
-                className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border ${
-                  activeImage === index ? "ring-2 ring-primaryy" : ""
-                }`}
+                className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border ${activeImage === index ? "ring-2 ring-primaryy" : ""
+                  }`}
                 onClick={() => setActiveImage(index)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -122,9 +121,8 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={i}
-                    className={`h-5 w-5 ${
-                      i < product.rating ? "fill-yellow-400 text-yellow-400" : "text-muted-foreground"
-                    }`}
+                    className={`h-5 w-5 ${i < product.rating ? "fill-yellow-400 text-yellow-400" : "text-muted-foreground"
+                      }`}
                   />
                 ))}
               </div>
@@ -140,7 +138,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                ${product.price.toFixed(2)}
+                {/*  ${product.price.toFixed(2)}*/}
               </motion.span>
               {product.discount > 0 && (
                 <motion.span
@@ -149,7 +147,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
-                  ${(product.price / (1 - product.discount / 100)).toFixed(2)}
+                  {/*    ${(product.price / (1 - product.discount / 100)).toFixed(2)}*/}
                 </motion.span>
               )}
             </div>
@@ -265,9 +263,8 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                           {Array.from({ length: 5 }).map((_, i) => (
                             <Star
                               key={i}
-                              className={`h-3 w-3 ${
-                                i < relatedProduct.rating ? "fill-yellow-400 text-yellow-400" : "text-muted-foreground"
-                              }`}
+                              className={`h-3 w-3 ${i < relatedProduct.rating ? "fill-yellow-400 text-yellow-400" : "text-muted-foreground"
+                                }`}
                             />
                           ))}
                         </div>
