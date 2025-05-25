@@ -83,7 +83,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Buscador expandido en mobile */}
+      {/*/ Buscador expandido en mobile */}
       {isSearchOpen && (
         <div className="border-t border-primaryy bg-white p-4 md:hidden">
           <div className="relative w-full">
