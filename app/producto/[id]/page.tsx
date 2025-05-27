@@ -61,6 +61,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                 className="object-contain"
+                priority
               />
             </motion.div>
             <div className="absolute left-3 top-3 flex flex-col gap-2">
@@ -258,7 +259,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                     <div className="p-2">
                       <h3 className="line-clamp-1 font-medium group-hover:text-primaryy">{relatedProduct.name}</h3>
                       <div className="mt-1 flex items-center justify-between">
-                        <span className="font-bold">${relatedProduct.price.toFixed(2)}</span>
+                        {/* <span className="font-bold">${relatedProduct.price.toFixed(2)}</span>*/}
                         <div className="flex">
                           {Array.from({ length: 5 }).map((_, i) => (
                             <Star

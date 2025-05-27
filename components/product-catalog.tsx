@@ -10,6 +10,10 @@ import Sidebar from "./sidebar"
 import { products } from "@/lib/data"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { useSearch } from "@/components/Search"
+import ProductMainContent from "./ProductMainContent"
+
+
+
 export default function ProductCatalog() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const [sortBy, setSortBy] = useState("featured")
@@ -51,87 +55,43 @@ export default function ProductCatalog() {
   const subcategories = Array.from(new Set(products.map((product) => product.subcategory)))
 
   return (
-    <div className=" flex space-y-6 px-2 py-6 w-full">
-      {/* Sidebar para pantallas grandes */}
-      <div className="hidden md:block w-[240px] sm:w-[300px]">
-        <Sidebar onSelectSubcategory={(slug) => setSelectedSubcategory(slug)} />
+    <div className="w-full px-2 py-6 mx-auto max-w-screen-lg">
+      {/* Botón hamburguesa SOLO en móvil */}
+      <div className="flex md:hidden mb-4">
+        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+          <SheetTrigger asChild>
+            <Button variant="outline" size="icon" className="p-3">
+              <Menu className="h-5 w-5" />
+              <span className="sr-only">Abrir menú</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent aria-describedby={undefined} side="left" className="w-[80vw] sm:w-[300px]">
+            <SheetTitle className="sr-only">Menú de categorías</SheetTitle>
+            <Sidebar onSelectSubcategory={(slug) => { setSelectedSubcategory(slug); setIsSheetOpen(false); }} />
+          </SheetContent>
+        </Sheet>
       </div>
 
-      {/* Sidebar para pantallas móviles */}
-      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-        <SheetTrigger asChild>
-          <Button variant="outline" size="icon" className="md:hidden p-3">
-            <Menu className="h-5 w-5" />
-            <span className="sr-only">Toggle menu</span>
-          </Button>
-        </SheetTrigger>
-        <SheetContent aria-describedby={undefined} side="left" className="w-[80vw] sm:w-[300px]">
-          <SheetTitle className="sr-only">Menú de categorías</SheetTitle>
-          <Sidebar onSelectSubcategory={(slug) => { setSelectedSubcategory(slug); setIsSheetOpen(false); }} />
-        </SheetContent>
-      </Sheet>
-
-      {/* Contenido principal */}
-      <div className="flex-1 space-y-6 px-2 py-6 mx-auto max-w-screen-lg">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <h1 className="text-2xl font-bold tracking-tight md:text-3xl">Catálogo de Productos</h1>
-
-          <div className="flex items-center gap-2">
-            <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Ordenar por" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="featured">Destacados</SelectItem>
-                <SelectItem value="newest">Más recientes</SelectItem>
-                <SelectItem value="price-low">Precio: Menor a Mayor</SelectItem>
-                <SelectItem value="price-high">Precio: Mayor a Menor</SelectItem>
-              </SelectContent>
-            </Select>
-
-            <Select value={selectedSubcategory} onValueChange={setSelectedSubcategory}>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Filtrar por subcategoría" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Todas</SelectItem>
-                {subcategories.map((subcategory) => (
-                  <SelectItem key={subcategory} value={subcategory}>
-                    {subcategory}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
-            <div className="flex items-center rounded-md border">
-              <Button
-                variant="ghost"
-                size="icon"
-                className={`rounded-r-none ${viewMode === "grid" ? "bg-muted" : ""}`}
-                onClick={() => setViewMode("grid")}
-              >
-                <Grid className="h-4 w-4" />
-                <span className="sr-only">Vista de cuadrícula</span>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className={`rounded-l-none ${viewMode === "list" ? "bg-muted" : ""}`}
-                onClick={() => setViewMode("list")}
-              >
-                <List className="h-4 w-4" />
-                <span className="sr-only">Vista de lista</span>
-              </Button>
-            </div>
-          </div>
+      {/* Layout principal */}
+      <div className="md:flex md:space-x-6">
+        {/* Sidebar solo en desktop */}
+        <div className="hidden md:block w-[240px] sm:w-[300px]">
+          <Sidebar onSelectSubcategory={setSelectedSubcategory} />
         </div>
 
-        {/* Mostrar productos filtrados */}
-        {viewMode === "grid" ? (
-          <ProductGrid products={filteredProducts} />
-        ) : (
-          <ProductList products={filteredProducts} />
-        )}
+        {/* Contenido principal */}
+        <div className="flex-1">
+          <ProductMainContent
+            filteredProducts={filteredProducts}
+            viewMode={viewMode}
+            setViewMode={setViewMode}
+            sortBy={sortBy}
+            setSortBy={setSortBy}
+            selectedSubcategory={selectedSubcategory}
+            setSelectedSubcategory={setSelectedSubcategory}
+            subcategories={subcategories}
+          />
+        </div>
       </div>
     </div>
   )

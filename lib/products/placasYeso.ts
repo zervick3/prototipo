@@ -11,6 +11,8 @@ export const placaProducts: Product[] = [
         rating: 4.5,
         reviews: 25,
         image: "/catalago/planchaStandar.webp",
+
+
         category: "Drywall",
         subcategory: "plachas",
         isNew: false,

@@ -16,7 +16,7 @@ interface ProductGridProps {
 
 export default function ProductGrid({ products }: ProductGridProps) {
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center">
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full mx-auto  place-items-center">
       {products.map((product, index) => (
         <motion.div
           key={`${product.code}-${index}`}
@@ -24,7 +24,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: index * 0.05 }}
           whileHover={{ y: -5 }}
-          className="card-3d-effect w-full max-w-xs mx-auto"
+          className=" w-full max-w-xs mx-auto"
         >
           <Card className="w-full h-full overflow-hidden border-2 border-transparent transition-all duration-300 hover:border-primaryy hover:shadow-lg">
             <div className="relative aspect-square overflow-hidden">
