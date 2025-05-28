@@ -7,11 +7,15 @@ import { Search, User } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { useSearch } from "@/components/Search"
+import { UserButton, SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
+
+
 
 export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const { searchValue, setSearchValue } = useSearch()
-
+  const { user } = useUser();
   return (
     <header className="sticky top-0 z-40 border-b border-primaryy bg-secondary shadow-md">
       <div className="container flex h-20 items-center justify-between px-4 md:px-6">
@@ -60,19 +64,34 @@ export default function Header() {
           >
             <Search className="h-5 w-5" />
           </Button>
+
+
           {/* Cuenta */}
-          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Button
-              variant="outline"
-              size="icon"
-              className="rounded-full border-primaryy text-primaryy hover:bg-primaryy/10"
-              aria-label="Cuenta"
-            >
-              <User className="h-5 w-5" />
-            </Button>
-          </motion.div>
+          <SignedIn>
+            <div className="flex items-center gap-2">
+              <UserButton afterSignOutUrl="/" />
+              {user && (
+                <span className="font-medium text-terciaryy">
+                  {user.firstName || user.username || user.primaryEmailAddress?.emailAddress}
+                </span>
+              )}
+            </div>
+          </SignedIn>
+          <SignedOut>
+            <SignInButton mode="modal">
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full border-primaryy text-primaryy hover:bg-primaryy/10"
+                aria-label="Iniciar sesión"
+              >
+                <User className="h-5 w-5" />
+              </Button>
+            </SignInButton>
+          </SignedOut>
         </div>
       </div>
+
 
       {/* Buscador expandido en mobile */}
       {isSearchOpen && (

@@ -2,6 +2,17 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SearchProvider } from "@/components/Search"
+
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
+
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -31,9 +42,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SearchProvider>
-          {children}
-        </SearchProvider>
+        <ClerkProvider>
+          <SearchProvider>
+            {children}
+          </SearchProvider>
+        </ClerkProvider>
       </body>
     </html>
   );
