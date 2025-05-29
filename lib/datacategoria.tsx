@@ -101,6 +101,7 @@ export const categories: Category[] = [
     color: "category-gradient-1",
     subcategories: [
       { name: "Atornilladores Inalámbricos", slug: "impacto" },
+      { name: "Taladro Percutor Inalámbricos", slug: "taladro" },
       
     ],
   },

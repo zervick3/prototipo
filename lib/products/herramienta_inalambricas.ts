@@ -1,6 +1,7 @@
 import type { Product } from "@/lib/types";
 
-export const inalambricas: Product[] = [ {
+export const inalambricas: Product[] = [ 
+    {
         id: "22334432",
         code: "ATORIMPAC01",
         name: "ATORNILLADOR DE IMPACTO / LI-ION 20V / HEX:6.35 230NM / 2X2.AHM / 0-2900BPM / BRUSHLESS  /TOTAL",
@@ -37,6 +38,48 @@ export const inalambricas: Product[] = [ {
             "1 cargador",
             "voltaje de 220-240V~50/60Hz",
             "luz de trabajo LED integrada",
+        ],
+        fichaTecnica: "",
+        tags: ["atornillador","Total","taladros","inalámbricos","herramientas"],
+        stockDisponible:1000,
+        ubicacionAlmacen: "nuevo chimbote - chimbote",
+    },
+    {
+        id: "22309494",
+        code: "ATORIMPAC02",
+        name: "TALADRO PERCUTOR COMPACTO LI.ON 20V 55NM 13MM BRUSHLESS INDUSTRIAL /TOTAL",
+        description: "Taladro percutor Total TIDLI205581, torque de 55 Nm, ideal para trabajos industriales con potencia y rendimiento profesional.",
+        price: 0,
+        discount: 0,
+        rating: 4.5,
+        reviews: 30,
+        image: "/inalambricos/tadro-percutor.webp",
+        images: [
+            "/inalambricos/tadro-percutor.webp",
+            "/total/total-img-produc1.webp",
+            "/total/total-img-produc2.webp",
+        ],
+        category: "inalámbricas",
+        subcategory: "taladro",
+        isNew: true,
+        inStock: true,
+        date: "2024-01-10",
+        technicalSpecs: {
+            Motor: "sin carbones ",
+            Voltaje: "20V",
+            Encastre: "1/4 (6.35mm)",
+            Batería: "2.0Ah",  
+            Velocidad:" 0-500/0-2000 rpm",
+            Impacto: "30000 bpm",
+            Torque: "55NM",
+            Luz: "trabajo LED integrada",
+            Indica:"LED de batería Si",
+          
+        },
+        features: [
+            "1pz puntas para atormillar",
+            "3pz brocas de acero",
+            "Sin batería",
         ],
         fichaTecnica: "",
         tags: ["atornillador","Total","taladros","inalámbricos","herramientas"],
