@@ -1,7 +1,7 @@
 import type { Product } from "@/lib/types";
 
 export const simplisimaProducts: Product[] = [
-{
+    {
         id: "pro-simplisima-1",
         code: "293792",
         name: "SIMPLISIMA MADERA RUSTICA 2.40 X 1.20 X 6MM",
@@ -10,7 +10,7 @@ export const simplisimaProducts: Product[] = [
         discount: 0,
         rating: 4.5,
         reviews: 30,
-        image: "/catalago/simplisimamadera.jfif",
+        image: "/catalago/simplisimamadera.jpg",
         category: "superboard",
         subcategory: "simplisima",
         isNew: true,
@@ -31,9 +31,9 @@ export const simplisimaProducts: Product[] = [
         tags: ["placa", "yeso", "simplisima"],
         stockDisponible: 100,
         ubicacionAlmacen: "nuevo chimbote - chimbote",
-        
-},
-{
+
+    },
+    {
         id: "pro-simplisima-1",
         code: "303535",
         name: "CERÁMICA VINTAGE LISBOA2.40 X 1.20 X 6MM ",
@@ -42,7 +42,7 @@ export const simplisimaProducts: Product[] = [
         discount: 0,
         rating: 4.5,
         reviews: 30,
-        image: "/catalago/simplisimavintage.jfif",
+        image: "/catalago/simplisimavintage.jpg",
         category: "superboard",
         subcategory: "simplisima",
         isNew: true,
@@ -63,6 +63,6 @@ export const simplisimaProducts: Product[] = [
         tags: ["placa", "yeso", "simplisima"],
         stockDisponible: 100,
         ubicacionAlmacen: "nuevo chimbote - chimbote",
-        
-},
+
+    },
 ]

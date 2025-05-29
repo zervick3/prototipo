@@ -37,7 +37,7 @@ export const superboardProducts: Product[] = [
         stockDisponible: 110,
         ubicacionAlmacen: "nuevo chimbote - chimbote",
     },
-     {
+    {
         id: "28768366",
         code: "113269",
         name: "Placa Fibrocemento Superboard 6 mm 1.22x2.44 metros ",
@@ -179,7 +179,7 @@ export const superboardProducts: Product[] = [
             "Resistente al Impacto"
         ],
         fichaTecnica: "",
-        tags: ["placa", "madera","texturada", "fibrocemento"],
+        tags: ["placa", "madera", "texturada", "fibrocemento"],
         stockDisponible: 100,
         ubicacionAlmacen: "nuevo chimbote - chimbote",
     },
@@ -192,7 +192,7 @@ export const superboardProducts: Product[] = [
         discount: 0,
         rating: 4.5,
         reviews: 30,
-        image: "/catalago/plancha15mm.jfif",
+        image: "/catalago/plancha15mm.jpg",
         category: "superboard",
         subcategory: "superboard",
         isNew: false,
@@ -216,7 +216,7 @@ export const superboardProducts: Product[] = [
             "Resistente al Impacto"
         ],
         fichaTecnica: "https://etex.azureedge.net/pi789323/original/289557077/entrepiso-15mm.pdf",
-        tags: ["placa", "15 mm", "fibrocemento","entrepiso"],
+        tags: ["placa", "15 mm", "fibrocemento", "entrepiso"],
         stockDisponible: 100,
         ubicacionAlmacen: "nuevo chimbote - chimbote",
     },
@@ -229,7 +229,7 @@ export const superboardProducts: Product[] = [
         discount: 0,
         rating: 4.5,
         reviews: 30,
-        image: "/catalago/plancha17mm.jfif",
+        image: "/catalago/plancha17mm.jpg",
         category: "superboard",
         subcategory: "superboard",
         isNew: false,
@@ -253,7 +253,7 @@ export const superboardProducts: Product[] = [
             "Resistente al Impacto"
         ],
         fichaTecnica: "https://etex.azureedge.net/pi789324/original/1204608410/entrepiso-17mm.pdf",
-        tags: ["placa", "17 mm", "fibrocemento","entrepiso"],
+        tags: ["placa", "17 mm", "fibrocemento", "entrepiso"],
         stockDisponible: 100,
         ubicacionAlmacen: "nuevo chimbote - chimbote",
     },
@@ -266,7 +266,7 @@ export const superboardProducts: Product[] = [
         discount: 0,
         rating: 5,
         reviews: 130,
-        image: "/catalago/plancha20mm.jfif",
+        image: "/catalago/plancha20mm.jpg",
         category: "superboard",
         subcategory: "superboard",
         isNew: true,
@@ -290,7 +290,7 @@ export const superboardProducts: Product[] = [
             "Resistente al Impacto"
         ],
         fichaTecnica: "https://etex.azureedge.net/pi789330/original/1678957493/ficha-tecnica-entrepiso-20-mm",
-        tags: ["placa", "20 mm", "fibrocemento","entrepiso"],
+        tags: ["placa", "20 mm", "fibrocemento", "entrepiso"],
         stockDisponible: 100,
         ubicacionAlmacen: "nuevo chimbote - chimbote",
     },

@@ -74,7 +74,7 @@ export const baldosasProducts: Product[] = [
         discount: 5,
         rating: 4.5,
         reviews: 30,
-        image: "/baldosa/baldosafibrocemento.jfif",
+        image: "/baldosa/baldosafibrocemento.jpg",
         category: "cielo raso",
         subcategory: "baldosafibrocemento",
         isNew: false,
