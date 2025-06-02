@@ -102,6 +102,8 @@ export const categories: Category[] = [
     subcategories: [
       { name: "Atornilladores Inalámbricos", slug: "impacto" },
       { name: "Taladro Percutor Inalámbricos", slug: "taladro" },
+      {name:"Amoladora 4½ Inalambrica Total", slug: "amoladora-inalambrica"},
+      {name:"Pistola de Calor Inalambrica", slug: "pistola-calor"},
       
     ],
   },
