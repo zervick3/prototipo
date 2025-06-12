@@ -12,6 +12,73 @@ interface SidebarProps {
   onSelectSubcategory?: (slug: string) => void
 }
 
+// Función recursiva para renderizar subcategorías de cualquier nivel
+function RenderSubcategories({
+  subcategories,
+  level = 1,
+  openSubcategories,
+  toggle,
+  onSelectSubcategory,
+}: {
+  subcategories: any[];
+  level?: number;
+  openSubcategories: string[];
+  toggle: (slug: string, isSub: boolean) => void;
+  onSelectSubcategory: (slug: string) => void;
+}) {
+  return (
+    <div className={`ml-${level * 2} space-y-1`}>
+      {subcategories.map((subcat) => (
+        <div key={subcat.slug} className="space-y-1">
+          <Button
+            variant="ghost"
+            className={cn(
+              `w-full justify-start pl-${level * 2} font-normal text-black transition-colors`,
+              openSubcategories.includes(subcat.slug)
+                ? "bg-primaryy text-terciaryy"
+                : "hover:bg-primaryy hover:text-terciaryy "
+            )}
+            onClick={() =>
+              subcat.subcategories
+                ? toggle(subcat.slug, true)
+                : onSelectSubcategory(subcat.slug)
+            }
+          >
+            {subcat.name}
+            {subcat.subcategories ? (
+              openSubcategories.includes(subcat.slug) ? (
+                <ChevronDown className="ml-auto h-4 w-4 " />
+              ) : (
+                <ChevronRight className="ml-auto h-4 w-4" />
+              )
+            ) : null}
+          </Button>
+          <AnimatePresence>
+            {subcat.subcategories &&
+              openSubcategories.includes(subcat.slug) && (
+                <motion.div
+                  className="space-y-1 pt-1"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <RenderSubcategories
+                    subcategories={subcat.subcategories}
+                    level={level + 1}
+                    openSubcategories={openSubcategories}
+                    toggle={toggle}
+                    onSelectSubcategory={onSelectSubcategory}
+                  />
+                </motion.div>
+              )}
+          </AnimatePresence>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function Sidebar({ onSelectSubcategory = () => {} }: SidebarProps) {
   const [openCategories, setOpenCategories] = useState<string[]>([])
   const [openSubcategories, setOpenSubcategories] = useState<string[]>([])
@@ -72,60 +139,14 @@ export default function Sidebar({ onSelectSubcategory = () => {} }: SidebarProps
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      {category.subcategories?.map((subcat) => (
-                        <div key={subcat.slug} className="space-y-1">
-                          <Button
-                            variant="ghost"
-                            className={cn(
-                                          "w-full justify-start pl-4 font-normal text-black transition-colors",
-                                           openSubcategories.includes(subcat.slug)
-                                           ? "bg-primaryy text-terciaryy"
-                                           : "hover:bg-primaryy hover:text-terciaryy "
-                                    )}
-                           onClick={() =>
-                                         subcat.subcategories
-                                         ? toggle(subcat.slug, true)
-                                         : onSelectSubcategory(subcat.slug)
-                                   }
-                          >
-                            {subcat.name}
-                            {subcat.subcategories ? (
-                              openSubcategories.includes(subcat.slug) ? (
-                                <ChevronDown className="ml-auto h-4 w-4 " />
-                              ) : (
-                                <ChevronRight className="ml-auto h-4 w-4" />
-                              )
-                            ) : null}
-                          </Button>
-
-                          <AnimatePresence>
-                            {subcat.subcategories &&
-                              openSubcategories.includes(subcat.slug) && (
-                                <motion.div
-                                  className="ml-6 space-y-1 pt-1"
-                                  initial={{ opacity: 0, height: 0 }}
-                                  animate={{ opacity: 1, height: "auto" }}
-                                  exit={{ opacity: 0, height: 0 }}
-                                  transition={{ duration: 0.3 }}
-                                >
-                                  {subcat.subcategories.map((subsub) => (
-                                    <Button
-                                      key={subsub.slug}
-                                      variant="ghost"
-                                      className={cn(
-                                                    "w-full justify-start pl-6 text-sm font-light text-black transition-colors",
-                                                    "hover:bg-terciaryy hover:text-white",
-                                             )}
-                                      onClick={() => onSelectSubcategory(subsub.slug)}
-                                    >
-                                      {subsub.name}
-                                    </Button>
-                                  ))}
-                                </motion.div>
-                              )}
-                          </AnimatePresence>
-                        </div>
-                      ))}
+                      {category.subcategories && (
+                        <RenderSubcategories
+                          subcategories={category.subcategories}
+                          openSubcategories={openSubcategories}
+                          toggle={toggle}
+                          onSelectSubcategory={onSelectSubcategory}
+                        />
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>

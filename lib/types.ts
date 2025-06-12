@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+
 export interface Product {
   id: string
   code: string
@@ -24,16 +25,13 @@ export interface Product {
   }
   features: string[]
 }
-export interface SubSubcategory {
-  name: string
-  slug: string
-}
+
 export type Subcategory = {
   name: string;
   slug: string;
   icon?: ReactNode;
   color?: string;
-  subcategories?: SubSubcategory[];
+  subcategories?: Subcategory[]; // <-- recursivo
 };
 
 export type Category = {
@@ -43,4 +41,3 @@ export type Category = {
   color?: string;
   subcategories?: Subcategory[];
 };
-

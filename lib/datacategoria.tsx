@@ -1,6 +1,6 @@
 // dataCategoria.ts
 import type { Category } from "./types";
-import { Hammer, Layers2, Cuboid, LibraryBig, Wrench, Ruler, Paintbrush, Lightbulb, Shield } from "lucide-react";
+import { Hammer, Layers2,PaintBucket, Cuboid, LibraryBig, Wrench, Ruler, Paintbrush, Lightbulb, Shield } from "lucide-react";
 
 // Tipo extendido con sub-subcategorías
 export interface SubcategoryWithChildren {
@@ -80,6 +80,56 @@ export const categories: Category[] = [
       { name: "Susp Tee Terciaria", slug: "terciaria" },
       { name: "Angulo Susp Perimetral", slug: "angulo" },
       { name: "Alambre", slug: "alambre" },
+    ],
+  },
+  {
+    name: "Aditivos",
+    slug: "aditivos",
+    icon: <PaintBucket className="h-5 w-5" />,
+    color: "category-gradient-1",
+    subcategories: [
+     {
+        name: "Desmoldantes",
+        slug: "desmoldantes",
+        subcategories: [
+          { name: "Z Cron", slug: "zcron" },
+          { name: "Z Desmol AL", slug: "zdesmolal" },
+          { name: "Z Desmolac PU", slug: "zdemolac" },
+        ],
+      },
+      {
+        name: "Curadores",
+        slug: "curadores",
+        subcategories: [
+          { name: "Z Membrana Blanco", slug: "zmembranaB" },
+          { name: "Z Membrana S", slug: "zmembranas" },
+          { name: "Curet Z ", slug: "curetz" },
+        ],
+      },
+      {
+        name: "Impermeabilizantes",
+        slug: "impermeabilizantes",
+        subcategories: [
+      {
+        name: "Integrales",
+        slug: "integrales",
+        
+        subcategories: [
+          { name: "Z 1 Liquido", slug: "z1liquido" },
+          { name: "Z 1 Polvo", slug: "sub2" }
+        ]
+      },
+      {
+        name: "Estructuras Enterrasadas",
+        slug: "estructuras-enterra",
+        subcategories: [
+           { name: "Z Bitumen", slug: "bitumen" },
+           { name: "Imprimante Z", slug: "imprimantez" },
+           { name: "Z Solvente B", slug: "zsolventeb" },
+        ]
+      }
+    ],
+      },
     ],
   },
   {
