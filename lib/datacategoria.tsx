@@ -111,10 +111,9 @@ export const categories: Category[] = [
         slug: "impermeabilizantes",
         subcategories: [
       {
-        name: "Integrales",
-        slug: "integrales",
-        
-        subcategories: [
+            name: "Integrales",
+            slug: "integrales",
+           subcategories: [
           { name: "Z 1 Liquido", slug: "z1liquido" },
           { name: "Z 1 Polvo", slug: "sub2" }
         ]
@@ -127,9 +126,168 @@ export const categories: Category[] = [
            { name: "Imprimante Z", slug: "imprimantez" },
            { name: "Z Solvente B", slug: "zsolventeb" },
         ]
+      },
+      {
+        name: "Tanques y Cisternas",
+        slug: "tanques-cisternas",
+        subcategories: [
+           { name: "Aquafin-CI", slug: "aquafin" },
+           { name: "Z Top Impermeable", slug: "ztopimpermeable" },
+           { name: "Z Top Flexible", slug: "ztopflexible" },
+        ]
+      },
+      {
+        name: "Superficiales",
+        slug: "superficiales",
+        subcategories: [
+           
+           { name: "Z Imperoof", slug: "zimperoof" },
+           { name: "Z 2000", slug: "z2000" },
+        ]
+      },
+      {
+        name: "Sellador de Superficies",
+        slug: "sellador-superficies",
+        subcategories: [
+           
+           { name: "Mate Z", slug: "matez" },
+          
+        ]
       }
     ],
       },
+      {
+        name: "Selladores De Juntas",
+        slug: "selladores-juntas",
+        subcategories: [
+          { name: "Z Flex PU 30-40 ", slug: "zflex3040" },
+          { name: "Imprimante ZPM", slug: "imprimantezpm" },
+          { name: "Z flex Poliuretano A+B", slug: "zflexpoliuretano" },
+          { name: "Backer Rod", slug: "backerrod" },
+          {
+            name: "Selladores para juntas Frias",
+            slug: "selladores-juntas-frias",
+           subcategories: [
+          { name: "Water Stop PVC", slug: "waterpvc" },
+          { name: "Water Stop RX-101", slug: "waterrx101" }
+        ]
+      }
+        ],
+      },
+      {
+        name: "Epoxicos",
+        slug: "epoxicos",
+        subcategories: [
+          { name: "Z Pox 31 ", slug: "pox31" },
+          { name: "Z Pox 32", slug: "pox32" },
+          { name: "Z Pox BV", slug: "poxbv" },
+          { name: "Z Pox Tacha", slug: "poxtacha" },
+          {
+            name: "Separadores",
+            slug: "separadores",
+           subcategories: [
+          { name: "Separadores de Concreto", slug: "separadores2" },
+         
+        ]
+      }
+        ],
+      },
+      {
+        name: "Morteros",
+        slug: "morteros",
+        subcategories: [
+          
+          {
+            name: "Moteros de Reparación",
+            slug: "morteros-reparacion",
+            
+           subcategories: [
+          { name: "Mortero Z T40", slug: "morterot40" },
+         
+        ]
+          },{
+            name: "Morteros de Nivelación",
+            slug: "morteros-nivelacion",
+            
+           subcategories: [
+          { name: "Z Nivelante T30", slug: "znivelante" },
+         
+        ]
+          },{
+            name: "Endurecedor de piso ",
+            slug: "endurecedor-piso",
+            
+           subcategories: [
+          { name: "Z Piso", slug: "zpiso" },
+         
+        ]
+          },{
+            name: "Groutings ",
+            slug: "groutings",
+            
+           subcategories: [
+          { name: "Z Grout", slug: "zgrout" },
+          { name: "Mortero Epoxicos Z", slug: "morteroepoxicosz" },
+         
+        ]
+          }
+        ],
+      },
+      {
+        
+        name: "Aditivos Para Concreto",
+        slug: "aditivos-concreto",
+        subcategories: [
+          {
+            name: "Plastificantes y Superplastificantes",
+            slug: "plastificantes-superplastificantes",
+           subcategories: [
+          { name: "Z Fluidizante IR ", slug: "zfluidizanteir" },
+          { name: "Z RR Plast 545 ", slug: "zrrplast545" },
+          { name: "Z Fluidizante SR-1000 ", slug: "zfluidizantesr1000" },
+         
+              ]
+          },{
+            name: "Acelerantes",
+            slug: "acelerantes",
+           subcategories: [
+          { name: "Z Fragua #3", slug: "zfragua3" },
+          { name: "Z Fragua #5", slug: "zfragua5" },
+          
+         
+              ]
+          },{
+
+            name: "Retardantes",
+            slug: "retardantes",
+           subcategories: [
+          { name: "Z Retar", slug: "zretar" },
+         
+         
+              ]
+          }
+                     ]
+                     
+      },
+       {
+        
+        name: "Aditivos Para Concreto",
+        slug: "aditivos-concreto",
+        subcategories: [
+          {
+            name: "Aditivos Complementarios",
+            slug: "aditivos-complementarios",
+            
+           subcategories: [
+          { name: "Z Resina 100% ", slug: "zresina100%" },
+          { name: "Removedor de Oxido ", slug: "removedoroxido" },
+          { name: "Z Fibra PP ", slug: "zfibrapp" },
+         
+              ]
+          }
+        ]
+                     
+      }
     ],
   },
   {
