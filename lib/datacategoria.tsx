@@ -13,7 +13,7 @@ export interface SubcategoryWithChildren {
 export const categories: Category[] = [
   {
     name: "Sistema Drywall",
-    slug: "sistema-drywall",
+    slug: "Drywall",
     icon: <Layers2 className="h-5 w-5" />,
     color: "category-gradient-1",
     subcategories: [
@@ -68,7 +68,7 @@ export const categories: Category[] = [
   // Otras categorías generales aquí ↓
   {
     name: "Cielo Raso",
-    slug: "cielo-raso",
+    slug: "cielo raso",
     icon: <Hammer className="h-5 w-5" />,
     color: "category-gradient-1",
     subcategories: [
@@ -292,7 +292,7 @@ export const categories: Category[] = [
   },
   {
     name: "Herramientas Manuales",
-    slug: "herramientas-manuales",
+    slug: "herramientas manuales",
     icon: <Hammer className="h-5 w-6" />,
     color: "category-gradient-1",
     subcategories: [
@@ -304,7 +304,7 @@ export const categories: Category[] = [
   },
   {
     name: "Herramientas inalámbricas",
-    slug: "herramientas-inalámbricas",
+    slug: "inalámbricas",
     icon: <Hammer className="h-5 w-6" />,
     color: "category-gradient-1",
     subcategories: [
@@ -317,7 +317,7 @@ export const categories: Category[] = [
   },
   {
     name: "Herramientas Eléctricas",
-    slug: "herramientas-electricas",
+    slug: "herramientas electricas",
     icon: <Wrench className="h-5 w-5" />,
     color: "category-gradient-1",
     subcategories: [

@@ -17,6 +17,7 @@ import ProductMainContent from "./ProductMainContent"
 export default function ProductCatalog() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const [sortBy, setSortBy] = useState("featured")
+  const [selectedCategory, setSelectedCategory] = useState<string>("all")
   const [selectedSubcategory, setSelectedSubcategory] = useState<string>("all")
   const [isSheetOpen, setIsSheetOpen] = useState(false)
   const { searchValue } = useSearch()
@@ -40,18 +41,31 @@ export default function ProductCatalog() {
 
   const sortedProducts = getSortedProducts()
 
-  // Filtrar productos por subcategoría seleccionada
-  const filteredProducts = products
-    .filter(product =>
-      product.name.toLowerCase().includes(searchValue.toLowerCase())
-    )
-    .filter(product =>
-      selectedSubcategory && selectedSubcategory !== "all"
-        ? product.subcategory === selectedSubcategory
-        : true
-    )
+  // Nueva función para manejar selección desde Sidebar
+  const handleSidebarSelect = (slug: string, type: "category" | "subcategory") => {
+    if (type === "category") {
+      setSelectedCategory(slug)
+      setSelectedSubcategory("all")
+    } else {
+      setSelectedSubcategory(slug)
+      setSelectedCategory("all")
+    }
+    setIsSheetOpen(false)
+  }
 
-  // Obtener las subcategorías únicas de los productos
+  // Filtrar productos según selección
+  const filteredProducts = sortedProducts
+    .filter(product => product.name.toLowerCase().includes(searchValue.toLowerCase()))
+    .filter(product => {
+      if (selectedSubcategory !== "all") {
+        return product.subcategory === selectedSubcategory
+      } else if (selectedCategory !== "all") {
+        return product.category === selectedCategory
+      }
+      return true
+    })
+
+  // Obtener subcategorías únicas de los productos
   const subcategories = Array.from(new Set(products.map((product) => product.subcategory)))
 
   return (
@@ -67,7 +81,10 @@ export default function ProductCatalog() {
           </SheetTrigger>
           <SheetContent aria-describedby={undefined} side="left" className="w-[80vw] sm:w-[300px]">
             <SheetTitle className="sr-only">Menú de categorías</SheetTitle>
-            <Sidebar onSelectSubcategory={(slug) => { setSelectedSubcategory(slug); setIsSheetOpen(false); }} />
+            <Sidebar
+              onSelectCategory={slug => handleSidebarSelect(slug, "category")}
+              onSelectSubcategory={slug => handleSidebarSelect(slug, "subcategory")}
+            />
           </SheetContent>
         </Sheet>
       </div>
@@ -76,7 +93,10 @@ export default function ProductCatalog() {
       <div className="md:flex md:space-x-6">
         {/* Sidebar solo en desktop */}
         <div className="hidden md:block w-[240px] sm:w-[300px]">
-          <Sidebar onSelectSubcategory={setSelectedSubcategory} />
+          <Sidebar
+            onSelectCategory={slug => handleSidebarSelect(slug, "category")}
+            onSelectSubcategory={slug => handleSidebarSelect(slug, "subcategory")}
+          />
         </div>
 
         {/* Contenido principal */}

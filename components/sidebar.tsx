@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { categories } from "@/lib/datacategoria"
 
 interface SidebarProps {
+  onSelectCategory?: (slug: string) => void
   onSelectSubcategory?: (slug: string) => void
 }
 
@@ -79,7 +80,7 @@ function RenderSubcategories({
   );
 }
 
-export default function Sidebar({ onSelectSubcategory = () => {} }: SidebarProps) {
+export default function Sidebar({ onSelectCategory = () => {}, onSelectSubcategory = () => {} }: SidebarProps) {
   const [openCategories, setOpenCategories] = useState<string[]>([])
   const [openSubcategories, setOpenSubcategories] = useState<string[]>([])
 
@@ -119,7 +120,10 @@ export default function Sidebar({ onSelectSubcategory = () => {} }: SidebarProps
                     category.color,
                     openCategories.includes(category.slug) ? "opacity-100" : "opacity-90"
                   )}
-                  onClick={() => toggle(category.slug)}
+                  onClick={() => {
+                    onSelectCategory(category.slug)
+                    toggle(category.slug)
+                  }}
                 >
                   <div className="bg-white/20 p-1 rounded-md">{category.icon}</div>
                   {category.name}
@@ -130,26 +134,24 @@ export default function Sidebar({ onSelectSubcategory = () => {} }: SidebarProps
                   )}
                 </Button>
 
-                <AnimatePresence>
-                  {openCategories.includes(category.slug) && (
-                    <motion.div
-                      className="ml-4 space-y-1"
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      {category.subcategories && (
-                        <RenderSubcategories
-                          subcategories={category.subcategories}
-                          openSubcategories={openSubcategories}
-                          toggle={toggle}
-                          onSelectSubcategory={onSelectSubcategory}
-                        />
-                      )}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {openCategories.includes(category.slug) && (
+                  <motion.div
+                    className="ml-4 space-y-1"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {category.subcategories && (
+                      <RenderSubcategories
+                        subcategories={category.subcategories}
+                        openSubcategories={openSubcategories}
+                        toggle={toggle}
+                        onSelectSubcategory={onSelectSubcategory}
+                      />
+                    )}
+                  </motion.div>
+                )}
               </div>
             ))}
           </div>
