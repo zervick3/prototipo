@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { motion, AnimatePresence } from "framer-motion"
 import { categories } from "@/lib/datacategoria"
+import React from "react"
 
 interface SidebarProps {
   onSelectCategory?: (slug: string) => void
@@ -27,17 +28,27 @@ function RenderSubcategories({
   toggle: (slug: string, isSub: boolean) => void;
   onSelectSubcategory: (slug: string) => void;
 }) {
+  // Ordenar subcategorías alfabéticamente
+  const sortedSubcategories = [...subcategories].sort((a, b) => 
+    a.name.localeCompare(b.name, 'es', { sensitivity: 'base' })
+  );
+
   return (
-    <div className={`ml-${level * 2} space-y-1`}>
-      {subcategories.map((subcat) => (
+    <div className={`ml-${level * 2} space-y-2`}>
+      {sortedSubcategories.map((subcat, index) => (
         <div key={subcat.slug} className="space-y-1">
           <Button
             variant="ghost"
             className={cn(
-              `w-full justify-start pl-${level * 2} font-normal text-black transition-colors`,
+              `w-full justify-start pl-${level * 2} font-normal transition-all duration-200 whitespace-normal break-words text-left rounded-md`,
+              level === 1 
+                ? "text-gray-700 hover:bg-blue-50 hover:text-blue-700 border-l-2 border-transparent hover:border-blue-300" 
+                : "text-gray-600 hover:bg-gray-50 hover:text-gray-800 text-sm",
               openSubcategories.includes(subcat.slug)
-                ? "bg-primaryy text-terciaryy"
-                : "hover:bg-primaryy hover:text-terciaryy "
+                ? level === 1 
+                  ? "bg-blue-100 text-blue-800 border-l-2 border-blue-500 font-medium" 
+                  : "bg-gray-100 text-gray-800 font-medium"
+                : ""
             )}
             onClick={() =>
               subcat.subcategories
@@ -45,20 +56,28 @@ function RenderSubcategories({
                 : onSelectSubcategory(subcat.slug)
             }
           >
-            {subcat.name}
-            {subcat.subcategories ? (
-              openSubcategories.includes(subcat.slug) ? (
-                <ChevronDown className="ml-auto h-4 w-4 " />
-              ) : (
-                <ChevronRight className="ml-auto h-4 w-4" />
-              )
-            ) : null}
+            <div className="flex items-center w-full">
+              <span className="flex-1">{subcat.name}</span>
+              {subcat.subcategories ? (
+                openSubcategories.includes(subcat.slug) ? (
+                  <ChevronDown className="ml-2 h-4 w-4 text-gray-500" />
+                ) : (
+                  <ChevronRight className="ml-2 h-4 w-4 text-gray-500" />
+                )
+              ) : null}
+            </div>
           </Button>
+          
+          {/* Separador visual entre subcategorías del mismo nivel */}
+          {index < sortedSubcategories.length - 1 && (
+            <div className={`ml-${level * 2} h-px bg-gray-200 mx-2`} />
+          )}
+          
           <AnimatePresence>
             {subcat.subcategories &&
               openSubcategories.includes(subcat.slug) && (
                 <motion.div
-                  className="space-y-1 pt-1"
+                  className="space-y-1 pt-2 border-l-2 border-gray-200 ml-2"
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
@@ -98,11 +117,11 @@ export default function Sidebar({ onSelectCategory = () => {}, onSelectSubcatego
   }
 
   return (
-    <aside className="w-full md:w-64 md:shrink-0 border-r bg-gradient-to-b from-background to-muted/30">
-      <ScrollArea className="h-full py-4">
-        <div className="px-3 py-2">
+    <aside className="w-full md:w-80 md:shrink-0 border-r border-gray-200 bg-gradient-to-b from-white to-gray-50/30 shadow-sm">
+      <ScrollArea className="h-full py-6">
+        <div className="px-4 py-2">
           <motion.h2
-            className="mb-4 px-4 text-lg font-semibold tracking-tight"
+            className="mb-6 px-2 text-xl font-bold tracking-tight text-gray-800 border-b border-gray-200 pb-3"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -110,33 +129,35 @@ export default function Sidebar({ onSelectCategory = () => {}, onSelectSubcatego
             Categorías
           </motion.h2>
 
-          <div className="space-y-3">
+          <div className="space-y-4">
             {categories.map((category) => (
-              <div key={category.slug} className="space-y-1">
+              <div key={category.slug} className="space-y-2">
                 <Button
                   variant="ghost"
                   className={cn(
-                    "w-full justify-start gap-2 font-medium  text-white hover:text-white",
+                    "w-full justify-start gap-3 font-semibold text-white hover:text-white transition-all duration-200 rounded-lg shadow-sm",
                     category.color,
-                    openCategories.includes(category.slug) ? "opacity-100" : "opacity-90"
+                    openCategories.includes(category.slug) ? "opacity-100 shadow-md" : "opacity-90 hover:opacity-100"
                   )}
                   onClick={() => {
                     onSelectCategory(category.slug)
                     toggle(category.slug)
                   }}
                 >
-                  <div className="bg-white/20 p-1 rounded-md">{category.icon}</div>
-                  {category.name}
+                  <div className="bg-white/20 p-1.5 rounded-md">
+                    {category.icon}
+                  </div>
+                  <span className="flex-1 text-left">{category.name}</span>
                   {openCategories.includes(category.slug) ? (
-                    <ChevronDown className="ml-auto h-4 w-4" />
+                    <ChevronDown className="h-4 w-4 text-white/80" />
                   ) : (
-                    <ChevronRight className="ml-auto h-4 w-4" />
+                    <ChevronRight className="h-4 w-4 text-white/80" />
                   )}
                 </Button>
 
                 {openCategories.includes(category.slug) && (
                   <motion.div
-                    className="ml-4 space-y-1"
+                    className="ml-4 space-y-2 border-l-2 border-gray-300 pl-4 bg-gray-50/50 rounded-r-lg py-2"
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
