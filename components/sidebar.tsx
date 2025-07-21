@@ -53,7 +53,7 @@ function RenderSubcategories({
             onClick={() =>
               subcat.subcategories
                 ? toggle(subcat.slug, true)
-                : onSelectSubcategory(subcat.slug)
+                : (console.log('Sidebar seleccionó subcategoría:', subcat.slug), onSelectSubcategory(subcat.slug))
             }
           >
             <div className="flex items-center w-full">
@@ -117,8 +117,8 @@ export default function Sidebar({ onSelectCategory = () => {}, onSelectSubcatego
   }
 
   return (
-    <aside className="w-full md:w-80 md:shrink-0 border-r border-gray-200 bg-gradient-to-b from-white to-gray-50/30 shadow-sm">
-      <ScrollArea className="h-full py-6">
+    <aside className="w-full md:w-80 md:shrink-0 border-r border-gray-200 bg-gradient-to-b from-white to-gray-50/30 shadow-sm max-h-screen overflow-y-auto">
+      <ScrollArea className="h-[70vh] md:h-full py-6">
         <div className="px-4 py-2">
           <motion.h2
             className="mb-6 px-2 text-xl font-bold tracking-tight text-gray-800 border-b border-gray-200 pb-3"

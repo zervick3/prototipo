@@ -41,6 +41,9 @@ export default function ProductCatalog() {
 
   const sortedProducts = getSortedProducts()
 
+  // Depuración: ver qué valores llegan
+  console.log('selectedCategory:', selectedCategory, 'selectedSubcategory:', selectedSubcategory);
+
   // Nueva función para manejar selección desde Sidebar
   const handleSidebarSelect = (slug: string, type: "category" | "subcategory") => {
     if (type === "category") {
@@ -54,19 +57,56 @@ export default function ProductCatalog() {
   }
 
   // Filtrar productos según selección
-  const filteredProducts = sortedProducts
-    .filter(product => product.name.toLowerCase().includes(searchValue.toLowerCase()))
-    .filter(product => {
-      if (selectedSubcategory !== "all") {
-        return product.subcategory === selectedSubcategory
-      } else if (selectedCategory !== "all") {
-        return product.category === selectedCategory
-      }
-      return true
-    })
+  const filteredProducts = sortedProducts.filter(product => {
+    // Filtro por búsqueda
+    if (!product.name.toLowerCase().includes(searchValue.toLowerCase())) return false;
 
-  // Obtener subcategorías únicas de los productos
-  const subcategories = Array.from(new Set(products.map((product) => product.subcategory)))
+    // Si hay sub-subcategoría seleccionada
+    if (selectedSubcategory !== "all" && selectedCategory === "all") {
+      // Si la subcategoría seleccionada es una rama principal (Chema o Z Aditivo)
+      if (
+        selectedSubcategory === "chema" ||
+        selectedSubcategory === "z-aditivo"
+      ) {
+        // Mostrar todos los productos de esa categoría
+        return product.category === selectedSubcategory;
+      }
+      // Para sub-subcategorías, filtro normal
+      return product.subcategory === selectedSubcategory;
+    }
+
+    // Si hay categoría seleccionada
+    if (selectedCategory !== "all") {
+      if (selectedCategory === "aditivos") {
+        return (
+          product.category === "aditivos" ||
+          product.category === "chema" ||
+          product.category === "z-aditivo"
+        );
+      }
+      if (selectedCategory === "chema" || selectedCategory === "z-aditivo") {
+        return product.category === selectedCategory;
+      }
+      return product.category === selectedCategory;
+    }
+
+    return true;
+  });
+
+  // Obtener subcategorías únicas de los productos relevantes para la categoría seleccionada
+  const subcategories = Array.from(
+    new Set(
+      products
+        .filter(product =>
+          selectedCategory === "all"
+            ? true
+            : product.category === selectedCategory ||
+              (selectedCategory === "aditivos" &&
+                (product.category === "chema" || product.category === "z-aditivo"))
+        )
+        .map(product => product.subcategory)
+    )
+  );
 
   return (
     <div className="w-full px-2 py-6 mx-auto max-w-screen-lg">
