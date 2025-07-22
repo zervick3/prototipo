@@ -11,7 +11,7 @@ import React from "react"
 
 interface SidebarProps {
   onSelectCategory?: (slug: string) => void
-  onSelectSubcategory?: (slug: string) => void
+  onSelectSubcategory?: (slug: string, parentCategory?: string) => void
 }
 
 // Función recursiva para renderizar subcategorías de cualquier nivel
@@ -21,12 +21,14 @@ function RenderSubcategories({
   openSubcategories,
   toggle,
   onSelectSubcategory,
+  parentCategory
 }: {
   subcategories: any[];
   level?: number;
   openSubcategories: string[];
   toggle: (slug: string, isSub: boolean) => void;
-  onSelectSubcategory: (slug: string) => void;
+  onSelectSubcategory: (slug: string, parentCategory?: string) => void;
+  parentCategory?: string;
 }) {
   // Ordenar subcategorías alfabéticamente
   const sortedSubcategories = [...subcategories].sort((a, b) => 
@@ -53,7 +55,7 @@ function RenderSubcategories({
             onClick={() =>
               subcat.subcategories
                 ? toggle(subcat.slug, true)
-                : (console.log('Sidebar seleccionó subcategoría:', subcat.slug), onSelectSubcategory(subcat.slug))
+                : (console.log('Sidebar seleccionó subcategoría:', subcat.slug), onSelectSubcategory(subcat.slug, parentCategory))
             }
           >
             <div className="flex items-center w-full">
@@ -89,6 +91,7 @@ function RenderSubcategories({
                     openSubcategories={openSubcategories}
                     toggle={toggle}
                     onSelectSubcategory={onSelectSubcategory}
+                    parentCategory={parentCategory}
                   />
                 </motion.div>
               )}
@@ -169,6 +172,7 @@ export default function Sidebar({ onSelectCategory = () => {}, onSelectSubcatego
                         openSubcategories={openSubcategories}
                         toggle={toggle}
                         onSelectSubcategory={onSelectSubcategory}
+                        parentCategory={category.slug}
                       />
                     )}
                   </motion.div>

@@ -45,13 +45,15 @@ export default function ProductCatalog() {
   console.log('selectedCategory:', selectedCategory, 'selectedSubcategory:', selectedSubcategory);
 
   // Nueva función para manejar selección desde Sidebar
-  const handleSidebarSelect = (slug: string, type: "category" | "subcategory") => {
+  const handleSidebarSelect = (slug: string, type: "category" | "subcategory", parentCategory?: string) => {
     if (type === "category") {
       setSelectedCategory(slug)
       setSelectedSubcategory("all")
     } else {
       setSelectedSubcategory(slug)
-      setSelectedCategory("all")
+      if (parentCategory) {
+        setSelectedCategory(parentCategory)
+      }
     }
     setIsSheetOpen(false)
   }
@@ -123,7 +125,7 @@ export default function ProductCatalog() {
             <SheetTitle className="sr-only">Menú de categorías</SheetTitle>
             <Sidebar
               onSelectCategory={slug => handleSidebarSelect(slug, "category")}
-              onSelectSubcategory={slug => handleSidebarSelect(slug, "subcategory")}
+              onSelectSubcategory={(slug, parentCategory) => handleSidebarSelect(slug, "subcategory", parentCategory)}
             />
           </SheetContent>
         </Sheet>
@@ -135,7 +137,7 @@ export default function ProductCatalog() {
         <div className="hidden md:block w-[240px] sm:w-[300px]">
           <Sidebar
             onSelectCategory={slug => handleSidebarSelect(slug, "category")}
-            onSelectSubcategory={slug => handleSidebarSelect(slug, "subcategory")}
+            onSelectSubcategory={(slug, parentCategory) => handleSidebarSelect(slug, "subcategory", parentCategory)}
           />
         </div>
 

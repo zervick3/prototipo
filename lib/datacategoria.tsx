@@ -86,9 +86,9 @@ export const categories: Category[] = [
       {
         name: "Z Aditivos",
         slug: "z-aditivo",
-        subcategories: [
-          {
-            name: "Desmoldantes",
+    subcategories: [
+     {
+        name: "Desmoldantes",
             slug: "z-aditivo-desmoldantes",
             subcategories: [
               { name: "Z Cron", slug: "z-aditivo-zcron" },
@@ -335,7 +335,7 @@ export const categories: Category[] = [
       {
         name: "SUPER PLASTIFICANTES PARA CONCRETO",
         slug: "super-plastificantes-para-concreto",
-        subcategories: [
+           subcategories: [
           { name: "Chemament 290 G", slug: "chemament-290-g" },
           { name: "Chemament 400", slug: "chemament-400" },
           { name: "Chemament 440", slug: "chemament-440" },
@@ -386,7 +386,7 @@ export const categories: Category[] = [
           { name: "Chema Aqua", slug: "chema-aqua" },
           { name: "Chema Antipolvo", slug: "chema-antipolvo" },
           { name: "Chema Bond", slug: "chema-bond" },
-        ],
+    ],
       },
       {
         name: "FRACTURADO DE ROCA",
@@ -398,7 +398,7 @@ export const categories: Category[] = [
       {
         name: "DESMOLADANTES PARA ENCOFRADOS",
         slug: "desmoldantes-para-encofrados",
-        subcategories: [
+           subcategories: [
           { name: "Chemalac", slug: "chemalac" },
           { name: "Chemalac 2", slug: "chemalac-2" },
           { name: "Chemalac Extra", slug: "chemalac-extra" },
@@ -420,7 +420,7 @@ export const categories: Category[] = [
       {
         name: "MORTEROS DE REPARACION",
         slug: "morteros-de-reparacion",
-        subcategories: [
+           subcategories: [
           { name: "Chemarep", slug: "chemarep" },
           { name: "Chema Grout", slug: "chema-grout" },
           { name: "Chema Grout Epoxico NF", slug: "chema-grout-epoxico-nf" },
@@ -440,7 +440,7 @@ export const categories: Category[] = [
       {
         name: "PEGAMENTOS EPÓXICOS",
         slug: "pegamentos-epoxicos",
-        subcategories: [
+           subcategories: [
           { name: "Chema Epox Anclaje 31", slug: "chema-epox-anclaje-31" },
           { name: "Chema Epox Adhesivo 32", slug: "chema-epox-adhesivo-32" },
           { name: "Polyepox O Universal", slug: "polyepox-o-universal" },
@@ -452,7 +452,7 @@ export const categories: Category[] = [
       {
         name: "SELLADO DE JUNTAS",
         slug: "sellado-de-juntas",
-        subcategories: [
+           subcategories: [
           { name: "Chema Junta Flexible de Poliuretano", slug: "chema-junta-flexible-poliuretano" },
           { name: "Chema junta Flexible Epoxica", slug: "chema-junta-flexible-epoxica" },
           { name: "Chema Rod", slug: "chema-rod" },
@@ -463,7 +463,7 @@ export const categories: Category[] = [
       {
         name: "MASILLAS PARA SUPERFICIES",
         slug: "masillas-para-superficies",
-        subcategories: [
+           subcategories: [
           { name: "Chemasilla Epoxica", slug: "chemasilla-epoxica" },
           { name: "Chemasilla Acrilica", slug: "chemasilla-acrilica" },
           { name: "Chemasilla SP", slug: "chemasilla-sp" },
@@ -473,7 +473,7 @@ export const categories: Category[] = [
       {
         name: "CEMENTO PULIDO DECORATIVO",
         slug: "cemento-pulido-decorativo",
-        subcategories: [
+           subcategories: [
           { name: "Decormix", slug: "decormix" },
         ],
       },
@@ -484,17 +484,17 @@ export const categories: Category[] = [
           { name: "Pegavinil Negro", slug: "pegavinil-negro" },
         ],
       },
-      { 
+          {
         name: "ADHESIVOS PEGATODO", 
         slug: "adhesivos-pegatodo",
-        subcategories: [
+           subcategories: [
         { name: "Chema Power Pegatodo", slug: "chema-power-pegatodo" },
       ], 
     },
       { 
         name: "PEGAMENTOS PARA ENCHAPES", 
         slug: "pegamentos-para-enchapes",
-        subcategories: [
+           subcategories: [
           { name: "Chemayolic Rapid", slug: "chemayolic-rapid" },
           { name: "Chemayolic Super Formatos", slug: "chemayolic-super-formatos" },
           { name: "Chemayolic Blanco Flexible", slug: "chemayolic-blanco-flexible" },
@@ -607,7 +607,7 @@ export const categories: Category[] = [
         ],
       },
       { name: "LINEA CHEMITA", slug: "linea-chemita",
-        subcategories: [
+           subcategories: [
           { name: "Chemita Desmold Metal", slug: "chemita-desmold-metal" },
           { name: "Chemita Curador Reforzado", slug: "chemita-curador-reforzado" },
           { name: "Chemita Epox Anclaje 31", slug: "chemita-epox-anclaje-31" },
@@ -632,7 +632,7 @@ export const categories: Category[] = [
       { 
         name: "LINEA PAGATON", 
         slug: "linea-pagaton",
-        subcategories: [
+           subcategories: [
           { name: "Pegaton Gris Interiores", slug: "pegaton-gris-interiores" },
           { name: "Pegaton Blanco Flexible", slug: "pegaton-blanco-flexible" },
         ],
