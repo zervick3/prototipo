@@ -752,5 +752,229 @@ export const chemaProducts: Product[] = [
     stockDisponible: 0,
     ubicacionAlmacen: ""
   },
+  // ACELERANTES PARA CONCRETO (según subcategoría)
+  {
+    id: "chema-plug-1",
+    code: "CHEMAPLUG-01",
+    name: "Chema Plug",
+    description: "Mortero hidráulico de fraguado ultrarrápido para obturación instantánea de filtraciones de agua en concreto y mampostería. Ideal para sellar grietas, juntas y puntos de ingreso de agua bajo presión.",
+    price: 0,
+    discount: 0,
+    rating: 0,
+    reviews: 0,
+    image: "/chema/CHEMA-PLUG.jpg",
+    category: "chema",
+    subcategory: "chema-plug",
+    isNew: true,
+    inStock: true,
+    date: "2025-06-27",
+    technicalSpecs: {
+      "Presentación": "Bolsa de 1 kg y 5 kg",
+      "Color": "Polvo gris",
+      "Tiempo de fraguado": "30-60 segundos",
+      "Aplicación": "Mezclado con agua y aplicación manual en la zona de filtración"
+    },
+    features: [
+      "Fraguado ultrarrápido para detención instantánea de agua",
+      "Ideal para reparaciones de emergencia",
+      "Alta adherencia y resistencia inicial"
+    ],
+    fichaTecnica: "https://chema.com.pe/fichas/chema-plug.pdf",
+    tags: ["acelerante", "plug", "filtraciones"],
+    stockDisponible: 0,
+    ubicacionAlmacen: ""
+  },
+  {
+    id: "chema-3-1",
+    code: "CHEMA3-01",
+    name: "Chema 3",
+    description: "Aditivo acelerante de fraguado para concreto y mortero, especialmente formulado para reducir el tiempo de fraguado y permitir un rápido desencofrado. Ideal para obras en climas fríos o con requerimientos de alta productividad.",
+    price: 0,
+    discount: 0,
+    rating: 0,
+    reviews: 0,
+    image: "/chema/chema3.jpg",
+    category: "chema",
+    subcategory: "chema-3",
+    isNew: true,
+    inStock: true,
+    date: "2025-06-27",
+    technicalSpecs: {
+      "Presentación": "Galón, balde y tambor",
+      "Color": "Líquido transparente",
+      "Densidad": "1.20 ± 0.02 g/cm³",
+      "Consumo": "0.5-1% del peso del cemento",
+      "Aplicación": "Mezclado directo en el agua de amasado"
+    },
+    features: [
+      "Acelera el fraguado y endurecimiento del concreto",
+      "Permite desencofrado rápido",
+      "Ideal para climas fríos y obras urgentes"
+    ],
+    fichaTecnica: "https://chema.com.pe/fichas/chema-3.pdf",
+    tags: ["acelerante", "concreto", "fraguado"],
+    stockDisponible: 0,
+    ubicacionAlmacen: ""
+  },
+  {
+    id: "chema-5-1",
+    code: "CHEMA5-01",
+    name: "Chema 5",
+    description: "Aditivo acelerante de fraguado en polvo para concreto y mortero. Facilita la ejecución de trabajos en bajas temperaturas y reduce el tiempo de espera para acabados y desencofrado.",
+    price: 0,
+    discount: 0,
+    rating: 0,
+    reviews: 0,
+    image: "/chema/chema5.jfif",
+    category: "chema",
+    subcategory: "chema-5",
+    isNew: true,
+    inStock: true,
+    date: "2025-06-27",
+    technicalSpecs: {
+      "Presentación": "Bolsa de 1 kg y 25 kg",
+      "Color": "Polvo blanco",
+      "Consumo": "1-2% del peso del cemento",
+      "Aplicación": "Mezclado directo con el cemento antes de agregar el agua"
+    },
+    features: [
+      "Reduce el tiempo de fraguado en climas fríos",
+      "Facilita acabados y desencofrado rápido",
+      "Fácil dosificación y mezcla homogénea"
+    ],
+    fichaTecnica: "https://chema.com.pe/fichas/chema-5.pdf",
+    tags: ["acelerante", "concreto", "fraguado", "polvo"],
+    stockDisponible: 0,
+    ubicacionAlmacen: ""
+  },
+  {
+    id: "chema-extract-1",
+    code: "CHEMAEXTRACT-01",
+    name: "Chema Extract",
+    description: "Aditivo acelerante y plastificante para concreto y mortero. Mejora la trabajabilidad, acelera el fraguado y permite obtener mezclas más homogéneas y resistentes, ideal para prefabricados y obras de alta exigencia.",
+    price: 0,
+    discount: 0,
+    rating: 0,
+    reviews: 0,
+    image: "/chema/chemaestruct.jpg",
+    category: "chema",
+    subcategory: "chema-extract",
+    isNew: true,
+    inStock: true,
+    date: "2025-06-27",
+    technicalSpecs: {
+      "Presentación": "Galón, balde y tambor",
+      "Color": "Líquido marrón",
+      "Densidad": "1.15 ± 0.02 g/cm³",
+      "Consumo": "0.5-1% del peso del cemento",
+      "Aplicación": "Mezclado directo en el agua de amasado"
+    },
+    features: [
+      "Acelera el fraguado y mejora la trabajabilidad",
+      "Plastifica y homogeniza la mezcla",
+      "Ideal para prefabricados y elementos estructurales"
+    ],
+    fichaTecnica: "https://chema.com.pe/fichas/chema-extract.pdf",
+    tags: ["acelerante", "plastificante", "extract"],
+    stockDisponible: 0,
+    ubicacionAlmacen: ""
+  },
+  // PLASTIFICANTES PARA CONCRETO (corregido)
+  {
+    id: "chema-plast-1",
+    code: "CHEMAPLAST-01",
+    name: "Chema Plast",
+    description: "Aditivo plastificante líquido para concreto y mortero. Mejora la trabajabilidad, reduce el consumo de agua y aumenta la resistencia mecánica, ideal para mezclas convencionales y bombeadas.",
+    price: 0,
+    discount: 0,
+    rating: 0,
+    reviews: 0,
+    image: "/chema/ChemaPlast.jpg",
+    category: "chema",
+    subcategory: "chema-plast",
+    isNew: true,
+    inStock: true,
+    date: "2025-06-27",
+    technicalSpecs: {
+      "Presentación": "Galón, balde y tambor",
+      "Color": "Líquido marrón",
+      "Densidad": "1.10 ± 0.02 g/cm³",
+      "Consumo": "0.2-0.5% del peso del cemento",
+      "Aplicación": "Mezclado directo en el agua de amasado"
+    },
+    features: [
+      "Mejora la plasticidad y trabajabilidad",
+      "Reduce el consumo de agua",
+      "Aumenta la resistencia y durabilidad"
+    ],
+    fichaTecnica: "https://chema.com.pe/fichas/chema-plast.pdf",
+    tags: ["plastificante", "concreto", "trabajabilidad"],
+    stockDisponible: 0,
+    ubicacionAlmacen: ""
+  },
+  {
+    id: "chemaplast-126n-1",
+    code: "CHEMAPLAST126N-01",
+    name: "Chemaplast 126N",
+    description: "Aditivo plastificante de alto rendimiento para concreto y mortero. Permite obtener mezclas más fluidas y homogéneas, facilitando el bombeo y la colocación en obra, ideal para elementos estructurales y prefabricados.",
+    price: 0,
+    discount: 0,
+    rating: 0,
+    reviews: 0,
+    image: "/chema/CHEMAPLAST-126N.jpg",
+    category: "chema",
+    subcategory: "chemaplast-126n",
+    isNew: true,
+    inStock: true,
+    date: "2025-06-27",
+    technicalSpecs: {
+      "Presentación": "Galón, balde y tambor",
+      "Color": "Líquido marrón oscuro",
+      "Densidad": "1.12 ± 0.02 g/cm³",
+      "Consumo": "0.2-0.6% del peso del cemento",
+      "Aplicación": "Mezclado directo en el agua de amasado"
+    },
+    features: [
+      "Alto poder plastificante",
+      "Facilita el bombeo y colocación",
+      "Mezclas más homogéneas y resistentes"
+    ],
+    fichaTecnica: "https://chema.com.pe/fichas/chemaplast-126n.pdf",
+    tags: ["plastificante", "concreto", "126n"],
+    stockDisponible: 0,
+    ubicacionAlmacen: ""
+  },
+  {
+    id: "chemaplast-120d-1",
+    code: "CHEMAPLAST120D-01",
+    name: "Chemaplast 120D",
+    description: "Aditivo plastificante ecológico para concreto y mortero. Reduce el consumo de agua y mejora la trabajabilidad, contribuyendo a mezclas más sostenibles y eficientes, ideal para obras de alta exigencia ambiental.",
+    price: 0,
+    discount: 0,
+    rating: 0,
+    reviews: 0,
+    image: "/chema/Megaplast-120D.jpg",
+    category: "chema",
+    subcategory: "chemaplast-120d",
+    isNew: true,
+    inStock: true,
+    date: "2025-06-27",
+    technicalSpecs: {
+      "Presentación": "Galón, balde y tambor",
+      "Color": "Líquido marrón claro",
+      "Densidad": "1.09 ± 0.02 g/cm³",
+      "Consumo": "0.2-0.5% del peso del cemento",
+      "Aplicación": "Mezclado directo en el agua de amasado"
+    },
+    features: [
+      "Ecológico y libre de cloruros",
+      "Mejora la plasticidad y reduce el agua",
+      "Ideal para mezclas sostenibles"
+    ],
+    fichaTecnica: "https://chema.com.pe/fichas/chemaplast-120d.pdf",
+    tags: ["plastificante", "concreto", "120d"],
+    stockDisponible: 0,
+    ubicacionAlmacen: ""
+  },
   
 ];
