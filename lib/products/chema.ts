@@ -976,5 +976,295 @@ export const chemaProducts: Product[] = [
     stockDisponible: 0,
     ubicacionAlmacen: ""
   },
+  // SUPER PLASTIFICANTES PARA CONCRETO
+  {
+    id: "chemament-290g-1",
+    code: "CHEMAMENT290G-01",
+    name: "Chemament 290 G",
+    description: "Superplastificante de alto rendimiento para concreto. Permite obtener mezclas muy fluidas con excelente trabajabilidad y resistencia, ideal para concreto bombeado y elementos estructurales de alta exigencia.",
+    price: 0,
+    discount: 0,
+    rating: 0,
+    reviews: 0,
+    image: "/chema/CHEMAMENT290G-01.jfif",
+    category: "chema",
+    subcategory: "chemament-290g",
+    isNew: true,
+    inStock: true,
+    date: "2025-06-27",
+    technicalSpecs: {
+      "Presentación": "Galón, balde y tambor",
+      "Color": "Líquido marrón oscuro",
+      "Densidad": "1.18 ± 0.02 g/cm³",
+      "Consumo": "0.5-1.5% del peso del cemento",
+      "Aplicación": "Mezclado directo en el agua de amasado"
+    },
+    features: [
+      "Alto poder superplastificante",
+      "Permite reducir el agua hasta 30%",
+      "Ideal para concreto bombeado y autocompactante"
+    ],
+    fichaTecnica: "https://chema.com.pe/fichas/chemament-290g.pdf",
+    tags: ["superplastificante", "concreto", "290g"],
+    stockDisponible: 0,
+    ubicacionAlmacen: ""
+  },
+  {
+    id: "chemament-400-1",
+    code: "CHEMAMENT400-01",
+    name: "Chemament 400",
+    description: "Superplastificante de nueva generación para concreto de alta resistencia. Proporciona mezclas muy fluidas, excelente retención de asentamiento y máxima durabilidad, ideal para prefabricados y concreto arquitectónico.",
+    price: 0,
+    discount: 0,
+    rating: 0,
+    reviews: 0,
+    image: "/chema/Chemament400.jpg",
+    category: "chema",
+    subcategory: "chemament-400",
+    isNew: true,
+    inStock: true,
+    date: "2025-06-27",
+    technicalSpecs: {
+      "Presentación": "Galón, balde y tambor",
+      "Color": "Líquido marrón",
+      "Densidad": "1.10 ± 0.02 g/cm³",
+      "Consumo": "0.5-1.5% del peso del cemento",
+      "Aplicación": "Mezclado directo en el agua de amasado"
+    },
+    features: [
+      "Excelente retención de asentamiento",
+      "Aumenta la resistencia inicial y final",
+      "Ideal para concreto arquitectónico"
+    ],
+    fichaTecnica: "https://chema.com.pe/fichas/chemament-400.pdf",
+    tags: ["superplastificante", "concreto", "400"],
+    stockDisponible: 0,
+    ubicacionAlmacen: ""
+  },
+  {
+    id: "chemament-440-1",
+    code: "CHEMAMENT440-01",
+    name: "Chemament 440",
+    description: "Superplastificante de alto desempeño para concreto de muy alta resistencia. Permite obtener mezclas autocompactantes y de baja relación agua/cemento, ideal para obras de infraestructura y prefabricados especiales.",
+    price: 0,
+    discount: 0,
+    rating: 0,
+    reviews: 0,
+    image: "/chema/Chemament440.jpg",
+    category: "chema",
+    subcategory: "chemament-440",
+    isNew: true,
+    inStock: true,
+    date: "2025-06-27",
+    technicalSpecs: {
+      "Presentación": "Galón, balde y tambor",
+      "Color": "Líquido marrón oscuro",
+      "Densidad": "1.20 ± 0.02 g/cm³",
+      "Consumo": "0.5-1.5% del peso del cemento",
+      "Aplicación": "Mezclado directo en el agua de amasado"
+    },
+    features: [
+      "Permite concreto autocompactante",
+      "Baja relación agua/cemento",
+      "Ideal para prefabricados especiales"
+    ],
+    fichaTecnica: "https://chema.com.pe/fichas/chemament-440.pdf",
+    tags: ["superplastificante", "concreto", "440"],
+    stockDisponible: 0,
+    ubicacionAlmacen: ""
+  },
+  {
+    id: "chema-megaplast-1",
+    code: "CHEMAMEGAPLAST-01",
+    name: "Chema Megaplast",
+    description: "Superplastificante de última generación para concreto de alto desempeño. Proporciona máxima fluidez, excelente retención de asentamiento y alta resistencia, ideal para concreto bombeado y elementos de gran exigencia estructural.",
+    price: 0,
+    discount: 0,
+    rating: 0,
+    reviews: 0,
+    image: "/chema/ChemaMegaplast.jpg",
+    category: "chema",
+    subcategory: "chema-megaplast",
+    isNew: true,
+    inStock: true,
+    date: "2025-06-27",
+    technicalSpecs: {
+      "Presentación": "Galón, balde y tambor",
+      "Color": "Líquido marrón oscuro",
+      "Densidad": "1.18 ± 0.02 g/cm³",
+      "Consumo": "0.5-1.5% del peso del cemento",
+      "Aplicación": "Mezclado directo en el agua de amasado"
+    },
+    features: [
+      "Máxima fluidez y trabajabilidad",
+      "Alta resistencia inicial y final",
+      "Ideal para concreto bombeado"
+    ],
+    fichaTecnica: "https://chema.com.pe/fichas/chema-megaplast.pdf",
+    tags: ["superplastificante", "concreto", "megaplast"],
+    stockDisponible: 0,
+    ubicacionAlmacen: ""
+  },
+  {
+    id: "chema-megaplast-1000m-1",
+    code: "CHEMAMEGAPLAST1000M-01",
+    name: "Chema Megaplast 1000M",
+    description: "Superplastificante de alto rendimiento para concreto de muy alta resistencia. Permite obtener mezclas autocompactantes y de baja viscosidad, ideal para prefabricados y elementos arquitectónicos complejos.",
+    price: 0,
+    discount: 0,
+    rating: 0,
+    reviews: 0,
+    image: "/chema/CHEMA-MEGAPLAST-1000M.jpg",
+    category: "chema",
+    subcategory: "chema-megaplast-1000m",
+    isNew: true,
+    inStock: true,
+    date: "2025-06-27",
+    technicalSpecs: {
+      "Presentación": "Galón, balde y tambor",
+      "Color": "Líquido marrón",
+      "Densidad": "1.19 ± 0.02 g/cm³",
+      "Consumo": "0.5-1.5% del peso del cemento",
+      "Aplicación": "Mezclado directo en el agua de amasado"
+    },
+    features: [
+      "Permite concreto autocompactante",
+      "Baja viscosidad y alta fluidez",
+      "Ideal para prefabricados complejos"
+    ],
+    fichaTecnica: "https://chema.com.pe/fichas/chema-megaplast-1000m.pdf",
+    tags: ["superplastificante", "concreto", "1000m"],
+    stockDisponible: 0,
+    ubicacionAlmacen: ""
+  },
+  {
+    id: "chema-megaplast-2000m-1",
+    code: "CHEMAMEGAPLAST2000M-01",
+    name: "Chema Megaplast 2000M",
+    description: "Superplastificante de última tecnología para concreto de ultra alto desempeño. Proporciona máxima reducción de agua, alta resistencia y durabilidad, ideal para obras de infraestructura y concreto arquitectónico de vanguardia.",
+    price: 0,
+    discount: 0,
+    rating: 0,
+    reviews: 0,
+    image: "/chema/megaplast-2000m.jpg",
+    category: "chema",
+    subcategory: "chema-megaplast-2000m",
+    isNew: true,
+    inStock: true,
+    date: "2025-06-27",
+    technicalSpecs: {
+      "Presentación": "Galón, balde y tambor",
+      "Color": "Líquido marrón oscuro",
+      "Densidad": "1.21 ± 0.02 g/cm³",
+      "Consumo": "0.5-1.5% del peso del cemento",
+      "Aplicación": "Mezclado directo en el agua de amasado"
+    },
+    features: [
+      "Ultra reducción de agua",
+      "Alta resistencia y durabilidad",
+      "Ideal para concreto arquitectónico de vanguardia"
+    ],
+    fichaTecnica: "https://chema.com.pe/fichas/chema-megaplast-2000m.pdf",
+    tags: ["superplastificante", "concreto", "2000m"],
+    stockDisponible: 0,
+    ubicacionAlmacen: ""
+  },
+  // RETARDANTES DE FRAGUADO (actualizado)
+  {
+    id: "chema-restardante-1",
+    code: "CHEMARESTARDANTE-01",
+    name: "Chema Restardante",
+    description: "Aditivo líquido retardante de fraguado para concreto y mortero. Prolonga el tiempo de trabajabilidad, ideal para vaciados masivos, climas cálidos y transporte prolongado de mezclas.",
+    price: 0,
+    discount: 0,
+    rating: 0,
+    reviews: 0,
+    image: "/chema/CHEMA-RETARDADOR.jpg",
+    category: "chema",
+    subcategory: "chema-restardante",
+    isNew: true,
+    inStock: true,
+    date: "2025-06-27",
+    technicalSpecs: {
+      "Presentación": "Galón, balde y tambor",
+      "Color": "Líquido transparente",
+      "Densidad": "1.05 ± 0.02 g/cm³",
+      "Consumo": "0.2-0.5% del peso del cemento",
+      "Aplicación": "Mezclado directo en el agua de amasado"
+    },
+    features: [
+      "Prolonga el tiempo de fraguado",
+      "Facilita el transporte y colocación",
+      "Ideal para climas cálidos y vaciados masivos"
+    ],
+    fichaTecnica: "https://chema.com.pe/fichas/chema-restardante.pdf",
+    tags: ["retardante", "fraguado", "concreto"],
+    stockDisponible: 0,
+    ubicacionAlmacen: ""
+  },
+  {
+    id: "chematard-400-1",
+    code: "CHEMATARD400-01",
+    name: "Chematard 400",
+    description: "Aditivo retardante de fraguado de alto desempeño para concreto y mortero. Permite un control preciso del tiempo de fraguado, ideal para obras de gran envergadura y altas temperaturas.",
+    price: 0,
+    discount: 0,
+    rating: 0,
+    reviews: 0,
+    image: "/chema/Chematard-400web.jpg",
+    category: "chema",
+    subcategory: "chematard-400",
+    isNew: true,
+    inStock: true,
+    date: "2025-06-27",
+    technicalSpecs: {
+      "Presentación": "Galón, balde y tambor",
+      "Color": "Líquido incoloro",
+      "Densidad": "1.06 ± 0.02 g/cm³",
+      "Consumo": "0.2-0.6% del peso del cemento",
+      "Aplicación": "Mezclado directo en el agua de amasado"
+    },
+    features: [
+      "Control preciso del fraguado",
+      "Ideal para altas temperaturas",
+      "Evita juntas frías en vaciados grandes"
+    ],
+    fichaTecnica: "https://chema.com.pe/fichas/chematard-400.pdf",
+    tags: ["retardante", "fraguado", "chematard-400"],
+    stockDisponible: 0,
+    ubicacionAlmacen: ""
+  },
+  {
+    id: "chema-plast-ret-1",
+    code: "CHEMAPLASTRET-01",
+    name: "Chema Plast Ret",
+    description: "Aditivo plastificante y retardante de fraguado para concreto y mortero. Mejora la trabajabilidad y extiende el tiempo de fraguado, ideal para mezclas que requieren transporte prolongado o colocación en climas cálidos.",
+    price: 0,
+    discount: 0,
+    rating: 0,
+    reviews: 0,
+    image: "/chema/CHEMA-PLAST.jpg",
+    category: "chema",
+    subcategory: "chema-plast-ret",
+    isNew: true,
+    inStock: true,
+    date: "2025-06-27",
+    technicalSpecs: {
+      "Presentación": "Galón, balde y tambor",
+      "Color": "Líquido marrón claro",
+      "Densidad": "1.08 ± 0.02 g/cm³",
+      "Consumo": "0.2-0.5% del peso del cemento",
+      "Aplicación": "Mezclado directo en el agua de amasado"
+    },
+    features: [
+      "Plastificante y retardante en un solo producto",
+      "Mejora la trabajabilidad y extiende el fraguado",
+      "Ideal para transporte prolongado de mezclas"
+    ],
+    fichaTecnica: "https://chema.com.pe/fichas/chema-plast-ret.pdf",
+    tags: ["plastificante", "retardante", "fraguado"],
+    stockDisponible: 0,
+    ubicacionAlmacen: ""
+  },
   
 ];
