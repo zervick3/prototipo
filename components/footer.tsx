@@ -10,7 +10,7 @@ function BrandSection() {
     { name: "Sika", img: "/marcas/sika.png" },
     { name: "Chema", img: "/marcas/chema.png" },
     { name: "Superboard", img: "/marcas/superboard.webp" },
-    { name: "Volcan", img: "/marcas/volcan.jfif" },
+    { name: "Volcan", img: "/marcas/volcan.png" },
     { name: "Total Tools", img: "/marcas/total.png" },
     { name: "Klar", img: "/marcas/klar.png" },
     { name: "Gyplac", img: "/marcas/gyplac.png" },
@@ -22,7 +22,7 @@ function BrandSection() {
     {name:"Wade", img:"/marcas/Weber_Logo_CMYK.jpg"},
     {name:"Norton", img:"/marcas/norton.svg"},
     {name:"Ecotec", img:"/marcas/ecotec.webp"},
-    {name:"tuboplast", img:"/marcas/tuboplast.jfif"},
+    {name:"tuboplast", img:"/marcas/tuboplast.png"},
     {name:"America", img:"/marcas/America-1.png"},
     {name:"nicoll", img:"/marcas/nicoll.png"},
     
